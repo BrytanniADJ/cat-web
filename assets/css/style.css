@@ -108,7 +108,7 @@ label{
 }
 
 .input{
-    background-color: transparent;
+    background-color: var(--gris90);
     color: var(--gris10);
     border: 1px solid var(--gris50);
 }
@@ -484,7 +484,8 @@ main.login section.logado{
         border-top-right-radius: 10px;
     }
     img#logo_bd{
-        width: 2%;
+        width: 5vh;
+        height: 3vw;
     }
     button{
         padding-inline: 3%;
@@ -502,16 +503,12 @@ main.login section.logado{
     }
     label{
         margin-right: 10px;
-        line-height: 9.4vh;
+        line-height: 3vh;
+        margin-top: 3vh;
     }
     input{
-        margin-top: 3vh;
-        margin-bottom: 4vh;
         padding-block: 3px;
-        padding-right: 10vh;
-    }
-    div.campos{
-        align-items: center;
+        width: 40vh;
     }
     div.txt-div1{
         text-align: right;
@@ -723,3 +720,6 @@ main.cat-final{
         line-height: 2vh;
     }
 }
+
+
+/* RESPONSIVIDADE */

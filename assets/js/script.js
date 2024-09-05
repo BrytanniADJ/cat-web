@@ -275,7 +275,6 @@ function telas_none(){
 function btts_sections(number){
     // chama a função para esconder todos os elementos
     telas_none();
-
     // exibe a tela de acordo com o botão
     if(number == 1){
         bd_1.style.display = "block";
