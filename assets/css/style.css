@@ -510,6 +510,10 @@ main.login section.logado{
         padding-block: 3px;
         width: 40vh;
     }
+    textarea{
+        width: 40vh;
+        height: 10vh;
+    }
     div.txt-div1{
         text-align: right;
     }

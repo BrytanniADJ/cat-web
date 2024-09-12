@@ -54,7 +54,7 @@
                         <button title="Medico" class="tabelas" onclick="btts_sections(6)">AGENTE CAUSADOR</button>
                     </div>
                 </section>
-                <section class="pesquisa" id="bd_1" style="display: block;">
+                <section class="pesquisa" id="bd_1" style="display: none;">
                     <div class="separador display-center">
                         <div class="txt-column">
                             <label>COD FUNCIONÁRIO:</label>
@@ -261,75 +261,57 @@
                 </section>
                 <section class="pesquisa" id="bd_3" style="display: none;">
                     <div class="separador display-center">
-                        <div class="campos campo1 display-center">
-                            <div class="txt-column txt-div1">
-                                <label for="cod">COD MÉDICO:</label>
-                                <label for="cod">NOME:</label>
-                                <label for="cod">CPF:</label>
-                            </div>
-                            <div class="txt-column">
-                                <input class="input" type="text">
-                                <input class="input" type="text">
-                                <input class="input" type="text">
-                            </div>
+                        <div class="txt-column">
+                            <label>COD:</label>
+                            <input type="text" class="input">
+    
+                            <label>NOME:</label>
+                            <input type="text" class="input">
+    
+                            <label>CPF:</label>
+                            <input type="text" class="input">
                         </div>
-                        <div class="campos campo2 display-center">
-                            <div class="txt-column txt-div1">
-                                <label for="cod">EMAIL:</label>
-                                <label for="cod">ESPECIALIDADE:</label>
-                                <label for="cod">CRM:</label>
-                            </div>
-                            <div class="txt-column">
-                                <input class="input" type="text">
-                                <input class="input" type="text">
-                                <input class="input" type="text">
-                            </div>
+                        <div class="txt-column">
+                            <label>EMAIL:</label>
+                            <input type="text" class="input">
+        
+                            <label>ESPECIALIDADE:</label>
+                            <input type="text" class="input">
+        
+                            <label>CRM</label>
+                            <input type="text" class="input">
                         </div>
                     </div>
                 </section>
                 <section class="pesquisa" id="bd_4" style="display: none;">
                     <div class="separador display-center">
-                        <div class="campos campo1 display-center">
-                            <div class="txt-column txt-div1">
-                                <label for="cod">COD CID:</label>
-                            </div>
-                            <div class="txt-column">
-                                <input class="input" type="text">
-                            </div>
+                        <div class="txt-column">
+                            <label>COD CID:</label>
+                            <input type="text" class="input">
                         </div>
-                        <div class="campos campo2 display-center">
-                            <div class="txt-column txt-div1">
-                                <label for="cod">DESCRIÇÃO:</label>
-                            </div>
-                            <div class="txt-column">
-                                <input class="input" type="text">
-                            </div>
+                        <div class="txt-column">
+                            <label>DESCRIÇÃO:</label>
+                            <textarea class="input">Descrição da Doença...</textarea>
                         </div>
                     </div>
                 </section>
-                <section class="pesquisa" id="bd_5" style="display: none;">
+                <section class="pesquisa" id="bd_5" style="display: block;">
                     <div class="separador display-center">
                         <div class="campos campo1 display-center">
-                            <div class="txt-column txt-div1">
-                                <label for="cod">COD:</label>
+                            <div class="txt-column">
+                                <label>COD DA LESÃO:</label>
+                                <input type="text" class="input">
                             </div>
                             <div class="txt-column">
-                                <input class="input" type="text">
-                            </div>
-                        </div>
-                        <div class="campos campo1 display-center">
-                            <div class="txt-column txt-div1">
-                                <label for="cod">TIPO DE LESÃO:</label>
-                            </div>
-                            <div class="txt-column">
-                                <input class="input" type="text">
+                                <label>DESCRIÇÃO:</label>
+                                <textarea class="input">Descrição da Lesão...</textarea>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section class="pesquisa" id="bd_6" style="display: none;">
                     <div class="separador display-center">
-                        <div class="campos campo1 display-center">
+                        <div class="display-center">
                             <div class="txt-column txt-div1">
                                 <label for="cod">COD:</label>
                             </div>
