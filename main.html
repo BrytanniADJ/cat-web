@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <!-- biancadj está na colaboração -->
-        <!-- Update teste -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,18 +19,12 @@
                 <img alt="Logo" src="./assets/images/logo-es.png" class="img-logo" onclick="modos()">
                 <h1 class="h1">ProSafe</h1>
             </div>
-            <div id="div" class="none"> <!-- CENTER -->
+            <div id="div" class="none center"> <!-- CENTER -->
                 <nav class="gov-br">
-                    <a href="https://www.gov.br/pt-br/orgaos-do-governo" target="_blank">Órgãos do Governo</a>
-                    <a href="https://www.gov.br/acessoainformacao/pt-br" target="_blank">Acesso à Informação</a>
-                    <a href="http://www4.planalto.gov.br/legislacao" target="_blank">Legislação</a>
-                    <a href="https://www.gov.br/governodigital/pt-br/acessibilidade-digital" target="_blank">Acessibilidade</a>
+                    <a href="./login.html">Login</a>
+                    <a href="./cat.html">Cadastrar CAT</a>
+                    <a href="#sem consulta">Consultas</a>
                 </nav>
-            </div>
-            <div class="right">
-                <a href="./login.html" class="bt_login">
-                    <img alt="Login" id="login" src="./assets/images/login-es.png" class="login" onclick="login()">
-                </a>
             </div>
         </header>
         <main class="index">
@@ -54,7 +46,7 @@
                     </div>
                 </div>
                 <div class="iniciar">
-                    <button onclick="verifica_login()" class="button-click">INICIAR</button>
+                    <button href="" class="button-click">INICIAR</button>
                 </div>
             </section>
             <section class="modify border-bottom">
@@ -69,39 +61,45 @@
             </section>
             <section id="perguntas" class="resumo">
                 <div>
-                    <img class="icon" data-type="select" src="./assets/images/select-es.png" alt="Select" class="id_select">
+                    <button class="button-z id_select" onclick="quests(1)"><img class="icon" data-type="select" src="./assets/images/select-es.png" alt="Select"></button>
                     <h2>O que é?</h2>
                 </div>
-                <p>Serviço para comunicar um acidente de trabalho ou de trajeto, bem como uma doença ocupacional.
-                    O documento pode ser usado em outros órgãos além do INSS.<br>
-                    Atenção! A empresa onde a pessoa acidentada trabalha é obrigada a informar o acidente até o dia útil seguinte.
-                    Caso o acidente resulte em morte, a comunicação deve ser imediata.<br>
-                    Este pedido é realizado totalmente pela internet, você não precisa ir ao INSS.</p>
-                    <div>
-                    <img class="icon" data-type="select" src="./assets/images/select-es.png" alt="Select" class="id_select">
+                <div style="display: none;" id="main-quest1">
+                    <p>Serviço para comunicar um acidente de trabalho ou de trajeto, bem como uma doença ocupacional.
+                        O documento pode ser usado em outros órgãos além do INSS.<br>
+                        Atenção! A empresa onde a pessoa acidentada trabalha é obrigada a informar o acidente até o dia útil seguinte.
+                        Caso o acidente resulte em morte, a comunicação deve ser imediata.<br>
+                        Este pedido é realizado totalmente pela internet, você não precisa ir ao INSS.</p>
+                </div>
+                <div>
+                    <button class="button-z id_select" onclick="quests(2)"><img class="icon" data-type="select" src="./assets/images/select-es.png" alt="Select"></button>
                     <h2>Quem pode utilizar este serviço?</h2>
                 </div>
-                <p>Empresa onde trabalha a pessoa vítima do acidente de trabalho ou de trajeto.
-                Caso a empresa não cumpra com esta obrigação, podem registrar a CAT:</p>
-                <ul>
-                    <br><li>A própria pessoa acidentada;</li>
-                    <li>Dependendes da pessoa acidentada;</li>
-                    <li>Entidades Sindicais;</li>
-                    <li>Médicos(a);</li>
-                    <li>Autoridades Públicas.</li>
-                </ul>
+                <div style="display: none;" id="main-quest2">
+                    <p>Empresa onde trabalha a pessoa vítima do acidente de trabalho ou de trajeto.
+                    Caso a empresa não cumpra com esta obrigação, podem registrar a CAT:</p>
+                    <ul>
+                        <br><li>A própria pessoa acidentada;</li>
+                        <li>Dependendes da pessoa acidentada;</li>
+                        <li>Entidades Sindicais;</li>
+                        <li>Médicos(a);</li>
+                        <li>Autoridades Públicas.</li>
+                    </ul>
+                </div>
                 <div>
-                    <img class="icon" data-type="select" src="./assets/images/select-es.png" alt="Select" class="id_select">
+                    <button class="button-z id_select" onclick="quests(3)"><img class="icon" data-type="select" src="./assets/images/select-es.png" alt="Select"></button>
                     <h2>Etapas para a realização deste serviço</h2>
                 </div>
-                <p><strong class="num">1</strong> Preencher e enviar o formulário de acidente de trabalho (CAT)<br>
-                    <ul>
-                        <li>Acesse o <a href="./cat.html">formulário</a>.</li>
-                        <li>Preencha todos os campos</li>
-                        <img src="./assets/images/print-passo1.png">
-                        <li>Passo 3 (Com img)</li>
-                    </ul>
-                </p>
+                <div style="display: none;" id="main-quest3">
+                    <p><strong class="num">1</strong> Preencher e enviar o formulário de acidente de trabalho (CAT)<br>
+                        <ul>
+                            <li>Acesse o <a href="./cat.html">formulário</a>.</li>
+                            <li>Preencha todos os campos</li>
+                            <img src="./assets/images/print-passo1.png">
+                            <li>Passo 3 (Com img)</li>
+                        </ul>
+                    </p>
+                </div>
             </section>
         </main>       
         <footer>
@@ -114,11 +112,13 @@
             <div class="div3">
                 <h2>Dev. Backend</h2>
                 <li>Maria Clara Damasceno Serro <a href="https://github.com/krara07">Github</a></li>
+                <li>Moisés Habacuque Gomes Pereira <a href="https://www.linkedin.com/in/moises-habacuque-0466502b1">LinkedIn</a></li>
             </div>
             <div class="div4">
                 <h2>Dev. Frontend</h2>
                 <li>Caique Romulo Araujo de Jesus</li>
                 <li>Diego Santos Luiz</li>
+                <li>Diego Mendes Cunha <a href="https://github.com/mendesdiego2024">Github</a> <a href="https://www.linkedin.com/in/diego-mendes-11425a228">LinkedIn</a></li>
             </div>
             <div class="div2">
                 <img src="./assets/images/senac_logo.png" alt="Logo Senac" title="Logo Senac">

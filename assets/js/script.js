@@ -1,5 +1,5 @@
 // escopo global
-let ativar_modos = false;
+let ativar_modos = true;
 let cor_logo = false;
 
 const bd_1 = document.getElementById("bd_1");
@@ -13,14 +13,15 @@ const bd_6 = document.getElementById("bd_6");
 function modos(){
     // Alterna o estado das variáveis
     ativar_modos = !ativar_modos;
-    cor_logo = !cor_logo;
+    cor_logo = !ativar_modos;
 
     // Aplica o estilo com base no modo
     if(!ativar_modos){
+        // Modo claro
         document.documentElement.style.setProperty('--base-negro', '#ffffff');
         document.documentElement.style.setProperty('--gris100', '#f2f2f2');
         document.documentElement.style.setProperty('--gris90', '#f8f8fa');
-        document.documentElement.style.setProperty('--gris80', '#f6f7f8'); // modo claro
+        document.documentElement.style.setProperty('--gris80', '#f6f7f8');
         document.documentElement.style.setProperty('--gris70', '#f1f3f1');
         document.documentElement.style.setProperty('--gris60', '#eae7ea');
         document.documentElement.style.setProperty('--gris10', '#616b77');
@@ -28,10 +29,11 @@ function modos(){
         document.documentElement.style.setProperty('--cores', '#ff6b00');
         document.documentElement.style.setProperty('--cores-es', '#ffa05c');
     }else{
+        // Modo escuro
         document.documentElement.style.setProperty('--base-negro', '#010409');
         document.documentElement.style.setProperty('--gris100', '#0d0d0d');
         document.documentElement.style.setProperty('--gris90', '#212121');
-        document.documentElement.style.setProperty('--gris80', '#242424'); // modo escuro
+        document.documentElement.style.setProperty('--gris80', '#242424');
         document.documentElement.style.setProperty('--gris70', '#2b2b2b');
         document.documentElement.style.setProperty('--gris60', '#383838');
         document.documentElement.style.setProperty('--gris10', '#d4d4d4');
@@ -40,21 +42,13 @@ function modos(){
         document.documentElement.style.setProperty('--cores-es', '#005694');
     }
 
-    // Função para atualizar a imagem do modo
-    modos_img();
-}
+    // Atualiza a imagem do modo
+    
+    const icons = document.querySelectorAll(".icon");
 
-// trocar imagens
-function modos_img(){
-    const icons = document.querySelectorAll(".icon"); // seleciona todos os documentos com Class=".icon"
-
-    icons.forEach((icon) => { // Transforma cada célula do vetor icons em uma variável icon
-        const type = icon.getAttribute("data-type"); // pega o atributo que tem o data-type
-        if(cor_logo === false){
-            icon.src = `assets/images/${type}-cl.png`;
-        }else{
-            icon.src = `assets/images/${type}-es.png`;
-        }
+    icons.forEach((icon) => {
+        const type = icon.getAttribute("data-type");
+        icon.src = `assets/images/${type}-${cor_logo ? 'cl' : 'es'}.png?${new Date().getTime()}`;
     });
 }
 
@@ -87,15 +81,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-// trocar imagens
+// trocar imagem da logo principal
 document.addEventListener('DOMContentLoaded', (event) => {
     const imagens = document.querySelectorAll('.img-logo'); // Seleciona todos os elementos com a classe 'img-logo'
     
     imagens.forEach(imagem => {
         imagem.addEventListener('mouseenter', () => {
-            if (!cor_logo){
-                imagem.src = 'assets/images/logo-cl.png';
-            } else {
+            imagem.src = 'assets/images/logo-cl.png';
+            if(!cor_logo){
+            }else{
                 imagem.src = 'assets/images/logo-es.png';
             }
         });
@@ -306,6 +300,25 @@ function btts_edicao(number){ // terminar depois de inserir banco de dados
 
     }
 
+}
+
+function quests(number){ // mudar para fazer o inverso e trocar imagens de acordo com o modo
+    const quest1 = document.getElementById("main-quest1");
+    const quest2 = document.getElementById("main-quest2");
+    const quest3 = document.getElementById("main-quest3");
+
+    if(number == 1){
+        quest1.style.display = "block";
+    }else if(number == 2){
+        quest2.style.display = "block";
+    }else{
+        quest3.style.display = "block";
+    }
+    if(ativar_modos == False){
+        
+    }else{
+
+    }
 }
 
 //print da tela do documento
