@@ -2,18 +2,17 @@
 let ativar_modos = true;
 let cor_logo = false;
 
-const bd_1 = document.getElementById("bd_1");
-const bd_2 = document.getElementById("bd_2");
-const bd_3 = document.getElementById("bd_3");
-const bd_4 = document.getElementById("bd_4");
-const bd_5 = document.getElementById("bd_5");
-const bd_6 = document.getElementById("bd_6");
+const bds = [];
+for (let i = 1; i <= 6; i++) {
+    bds.push(document.getElementById(`bd_${i}`));
+}
 
 // Modo claro / escuro - cores
 function modos(){
     // Alterna o estado das variáveis
     ativar_modos = !ativar_modos;
     cor_logo = !ativar_modos;
+    const icons = document.querySelectorAll(".icon");
 
     // Aplica o estilo com base no modo
     if(!ativar_modos){
@@ -44,7 +43,6 @@ function modos(){
 
     // Atualiza a imagem do modo
     
-    const icons = document.querySelectorAll(".icon");
 
     icons.forEach((icon) => {
         const type = icon.getAttribute("data-type");
@@ -256,70 +254,30 @@ function login(){
 }
 
 // pesquisa página login
-function telas_none(){
-    // esconde todas as telas
-    bd_1.style.display = "none";
-    bd_2.style.display = "none";
-    bd_3.style.display = "none";
-    bd_4.style.display = "none";
-    bd_5.style.display = "none";
-    bd_6.style.display = "none";
+function telas_none(){ // versão otimizada de uma função
+    for (let i = 1; i <= 6; i++) {
+        document.getElementById(`bd_${i}`).style.display = "none";
+    }
 }
 
-function btts_sections(number){
-    // chama a função para esconder todos os elementos
+function btts_sections(number) {
+    // Chama a função para esconder todos os elementos
     telas_none();
-    // exibe a tela de acordo com o botão
-    if(number == 1){
-        bd_1.style.display = "block";
-    }else if(number == 2) {
-        bd_2.style.display = "block";
-    }else if(number == 3) {
-        bd_3.style.display = "block";
-    }else if(number == 4){
-        bd_4.style.display = "block";
-    }else if(number == 5){
-        bd_5.style.display = "block";
-    }else{
-        bd_6.style.display = "block";
-    }
-}
 
-function btts_edicao(number){ // terminar depois de inserir banco de dados
-    if(number == 1){
-
-    }else if(number == 2){
-
-    }else if(number == 3){
-
-    }else if(number == 4){
-
-    }else if(number == 5){
-
-    }else{
-
-    }
-
+    // Exibe a tela de acordo com o botão
+    document.getElementById(`bd_${number}`).style.display = "block";
 }
 
 function quests(number){ // mudar para fazer o inverso e trocar imagens de acordo com o modo
-    const quest1 = document.getElementById("main-quest1");
-    const quest2 = document.getElementById("main-quest2");
-    const quest3 = document.getElementById("main-quest3");
-
-    if(number == 1){
-        quest1.style.display = "block";
-    }else if(number == 2){
-        quest2.style.display = "block";
+    const quest = document.getElementById(`main-quest${number}`);
+    const select = document.getElementById(`select${number}`);
+    if(quest.style.display == "block"){ // identifica se o display está 'block'
+        quest.style.display = "none"; // apaga o texto
+        select.style.transform = 'scaleY(1)'; // volta a versão original do select
     }else{
-        quest3.style.display = "block";
-    }
-    if(ativar_modos == False){
-        
-    }else{
-
+        quest.style.display = "block";
+        select.style.transform = 'scaleY(-1)'; // inverte verticalmente o select
     }
 }
-
 //print da tela do documento
 // window.print()
