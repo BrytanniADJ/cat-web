@@ -355,8 +355,8 @@ section.resumo{
         margin-top: 15px;
     }
     img{
-        width: 40px;
-        height: 35px;
+        width: 30px;
+        height: 25px;
     }
     h2{
         font-size: 3vh;
@@ -650,6 +650,11 @@ main.cat-inicio section.titulo#campo4{
 main.cat-final{
     align-items: center;
     height: 100%;
+    .final-text{
+        margin-block: 20px;
+        margin-inline: 5vh;
+        line-height: 2vh;
+    }
     section{
         margin-inline: 5vh;
         margin-block: 4vh;
@@ -718,14 +723,5 @@ main.cat-final div.assinant{
         margin-top: 2vh;
     }
 }
-
-main.cat-final{
-    .final-text{
-        margin-block: 20px;
-        margin-inline: 5vh;
-        line-height: 2vh;
-    }
-}
-
 
 /* RESPONSIVIDADE */
