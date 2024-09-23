@@ -34,7 +34,7 @@
                     </select>
                 </div>
             </section>
-            <section class="titulo sec2" id="cat-part2"> <!-- style="visibility: hidden;" -->
+            <section class="titulo sec2" id="cat-part2" style="visibility: block;"> <!-- style="visibility: hidden;" -->
                 <h2>Pesquisar</h2>
                 <div class="display-center">
                     <div class="cat-sec2">
@@ -112,10 +112,11 @@
                         <input id="date_obri" class="date date-obri" type="date">
                     </div>
                 </div>
-                <button onclick="cat_proximo1()" class="button-click">Próximo</button>
+                <button onclick="cat_proximo(1)" class="button-click">Próximo</button>
             </section>
-            <section id="campo3" class="titulo sec3 display-center"> <!-- style="display:none; "-->
+            <section id="campo3" class="titulo sec3 display-center" style="visibility: block;"> <!-- style="display:none; "-->
                 <h2>Empregador</h2>
+                <div>
                 <div class="display-center display-duplo">
                     <div class="display-center">
                         <div class="cat-sec2">
@@ -178,9 +179,9 @@
                             <input type="email">
                         </div>
                     </div>
-                </div>
+                    <button onclick="cat_proximo(2)" class="button-click">Próximo</button>
             </section>
-            <section id="campo4" class="titulo sec3">
+            <section id="campo4" class="titulo sec3" style="visibility: block;">
                 <h2>Acidentado</h2>
                 <div class="display-center display-duplo">
                     <div class="display-center">
@@ -291,8 +292,9 @@
                         </div>
                     </div>
                 </div>
+                <button onclick="cat_proximo(3)" class="button-click">Próximo</button>
             </section>
-            <section id="campo5" class="titulo sec3">
+            <section id="campo5" class="titulo sec3" style="visibility: block;">
                 <h2>Acidente</h2>
             </section>
         </main>

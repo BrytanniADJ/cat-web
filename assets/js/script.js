@@ -42,11 +42,13 @@ function modos(){
     }
 
     // Atualiza a imagem do modo
-    
-
     icons.forEach((icon) => {
         const type = icon.getAttribute("data-type");
-        icon.src = `assets/images/${type}-${cor_logo ? 'cl' : 'es'}.png?${new Date().getTime()}`;
+        icon.style.opacity = 0; // deixa opacidade em 0 das imagens
+        setTimeout(() =>{ 
+            icon.src = `assets/images/${type}-${cor_logo ? 'cl' : 'es'}.png?${new Date().getTime()}`;
+            icon.style.opacity = 1; // deixa imagens visíveis após o tempo de 0.5s
+        }, 500);
     });
 }
 
@@ -218,40 +220,11 @@ document.getElementById("cep-pesquisa").addEventListener('change'), function(){
     var cep = document.getElementById('cep-pesquisa').value.replace(/\D/g, '');
 }
 
-function cat_proximo1(){
-    const campo3 = document.getElementById("campo3"); // Elemento que será exibido ou oculto
-    
-    const campos = document.querySelectorAll('#cnpj-mask, #cei-mask, #cpf-mask, #nit-mask, #caepf-mask, #cno-mask');
-    let preenchidos = false;
+function cat_proximo1(n){
 
-    campos.forEach((campo) => {
-        // Exclui caracteres não numéricos e verifica se há pelo menos 11 caracteres numéricos visíveis
-        if(campo.value.replace(/[^0-9]/g, '').length >= 11){
-            preenchidos = true;
-        }
-    });
-    if(preenchidos){
-        campo3.style.display = "flex";
-    }
 }
 
 // página 2 login
-function login(){
-    const username = document.getElementById("username");
-    const password = document.getElementById("password"); // corrigir usando banco de dados
-    const section1 = document.getElementById("section_login1");
-    const section2 = document.getElementById("section_login2");
-    const h1 = document.getElementById("txt_name");
-
-    section1.style.display = "none";
-    section2.style.display = "block";
-
-    h1.innerText = "Bem vindo(a), "+ username.value;
-    /*
-    Se o login for de um usuário --> página CAT
-    se for adm --> Página Login 2
-    */
-}
 
 // pesquisa página login
 function telas_none(){ // versão otimizada de uma função
@@ -260,24 +233,35 @@ function telas_none(){ // versão otimizada de uma função
     }
 }
 
-function btts_sections(number) {
+function btts_sections(n) {
     // Chama a função para esconder todos os elementos
     telas_none();
 
     // Exibe a tela de acordo com o botão
-    document.getElementById(`bd_${number}`).style.display = "block";
+    document.getElementById(`bd_${n}`).style.display = "block";
 }
 
-function quests(number){ // mudar para fazer o inverso e trocar imagens de acordo com o modo
-    const quest = document.getElementById(`main-quest${number}`);
-    const select = document.getElementById(`select${number}`);
+function quests(n){ // mudar para fazer o inverso e trocar imagens de acordo com o modo
+    const quest = document.getElementById(`main-quest${n}`)
     if(quest.style.display == "block"){ // identifica se o display está 'block'
         quest.style.display = "none"; // apaga o texto
-        select.style.transform = 'scaleY(1)'; // volta a versão original do select
+        document.getElementById(`select${n}`).style.transform = 'scaleY(1)'; // volta a versão original do select
     }else{
         quest.style.display = "block";
-        select.style.transform = 'scaleY(-1)'; // inverte verticalmente o select
+        document.getElementById(`select${n}`).style.transform = 'scaleY(-1)'; // inverte verticalmente o select
     }
 }
+
+// modal página MAIN
+function main_modal(n){
+    if(n == 1){
+        // Exibe o modal ao definir a visibilidade como "visible"
+        document.getElementById("sec_modal").style.visibility = "visible";
+    }else{
+        document.getElementById("sec_modal").style.visibility = "hidden";
+    }
+}
+
+
 //print da tela do documento
 // window.print()
