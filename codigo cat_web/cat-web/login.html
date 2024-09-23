@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/reset.css"> Link do caminho para a página de reset do estilo do site
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link do caminho para a página do estilo do site -->
+        <link rel="icon" type="image/x-icon" href=""> <!-- Colocar ícone no título do site -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="./assets/images/login-icon.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>ProSafe - LOGIN</title> <!-- Título -->
+    </head>
+    <body class="login">
+        <header id="header">
+            <div class="left">
+                <a href="./main.html" style="display: flex; justify-content: center;"><h1 class="h1">ProSafe -</h1><h1 id="txt_name">- LOGIN</h1></a>
+            </div>
+        </header>
+        
+        <main class="login">
+            <section id="section_login1" class="login border-full" style="display: block;"> <!-- Display: none -->
+                <img class="icon" data-type="logo" src="./assets/images/logo-es.png" alt="Logo" id="logo">
+                <form action="./login.html" class="form-login">
+                    <div class="form">
+                        <label for="username">Usuário:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </form>
+                <form action="./login.html" class="checkbox">
+                    <input type="checkbox" id="ver_senha" class="check">
+                    <label for="">Ver Senha</label>
+                </form>
+                <div class="button-login">
+                    <button onclick="login()" class="button-click">Entrar</button>
+                </div>
+            </section>
+            <section id="section_login2" class="logado" style="display: none;">
+                <section class="head conteiner">
+                    <div class="display-center">
+                        <button title="Empregador" class="tabelas" onclick="btts_sections(1)">FUNCIONÁRIO</button>
+                        <button title="Acidente" class="tabelas" onclick="btts_sections(2)">EMPRESA</button>
+                        <button title="Acidente" class="tabelas" onclick="btts_sections(3)">MÉDICO</button>
+                        <img alt="Logo" src="./assets/images/logo-es.png" class="img-logo" onclick="modos()" id="logo_bd">
+                        <button title="Acidentado" class="tabelas" onclick="btts_sections(4)">CID</button>
+                        <button title="Medico" class="tabelas" onclick="btts_sections(5)">TIPO DE LESÃO</button>
+                        <button title="Medico" class="tabelas" onclick="btts_sections(6)">AGENTE CAUSADOR</button>
+                    </div>
+                </section>
+                <section class="pesquisa" id="bd_1" style="display: block;">
+                    <div class="separador display-center">
+                        <div class="campos campo1 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">COD:</label>
+                                <label for="cod">NOME:</label>
+                                <label for="cod">NOME DA MÃE:</label>
+                                <label for="cod">DATA NASC.:</label>
+                                <label for="cod">SEXO BIOLÓGICO:</label>
+                                <label for="cod">ESTADO CIVIL:</label>
+                                <label for="cod">CTPS:</label>
+                                <label for="cod">IDENTIDADE:</label>
+                                <label for="cod">CPF:</label>
+                                <label for="cod">NIT/PIS/PASEP:</label>
+                                <label for="cod">CEP:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="campos campo2 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">ENDEREÇO:</label>
+                                <label for="cod">BAIRRO:</label>
+                                <label for="cod">ESTADO:</label>
+                                <label for="cod">MUNICÍPIO:</label>
+                                <label for="cod">TELEFONE:</label>
+                                <label for="cod">ÁREA:</label>
+                                <label for="cod">CBO:</label>
+                                <label for="cod">APOSENTADORIA:</label>
+                                <label for="cod">REMUNERAÇÃO:</label>
+                                <label for="cod">RA:</label>
+                                <label for="cod">GRAU INSTRUÇÃO:</label>
+                                <label for="cod">EMAIL:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pesquisa" id="bd_2" style="display: none;">
+                    <div class="separador display-center">
+                        <div class="campos campo1 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">COD:</label>
+                                <label for="cod">NOME:</label>
+                                <label for="cod">TIPO NUM. DOC.:</label>
+                                <label for="cod">CNAE:</label>
+                                <label for="cod">CEP:</label>
+                                <label for="cod">BAIRRO:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="campos campo2 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">ESTADO:</label>
+                                <label for="cod">MUNICÍPIO:</label>
+                                <label for="cod">ENDEREÇO:</label>
+                                <label for="cod">CNPJ:</label>
+                                <label for="cod">TELEFONE:</label>
+                                <label for="cod">EMAIL:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pesquisa" id="bd_3" style="display: none;">
+                    <div class="separador display-center">
+                        <div class="campos campo1 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">COD MÉDICO:</label>
+                                <label for="cod">NOME:</label>
+                                <label for="cod">CPF:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="campos campo2 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">EMAIL:</label>
+                                <label for="cod">ESPECIALIDADE:</label>
+                                <label for="cod">CRM:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pesquisa" id="bd_4" style="display: none;">
+                    <div class="separador display-center">
+                        <div class="campos campo1 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">COD CID:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="campos campo2 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">DESCRIÇÃO:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pesquisa" id="bd_5" style="display: none;">
+                    <div class="separador display-center">
+                        <div class="campos campo1 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">COD:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="campos campo1 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">TIPO DE LESÃO:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pesquisa" id="bd_6" style="display: none;">
+                    <div class="separador display-center">
+                        <div class="campos campo1 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">COD:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="campos campo1 display-center">
+                            <div class="txt-column txt-div1">
+                                <label for="cod">AGENTE CAUSADOR:</label>
+                            </div>
+                            <div class="txt-column">
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="conteiner">
+                    <div class="botoes display-center">
+                        <button class="button-click" onclick="btts_edicao(1)">CADASTRAR</button>
+                        <button class="button-click" onclick="btts_edicao(2)">ATUALIZAR</button>
+                        <button class="button-click" onclick="btts_edicao(3)">EXCLUIR</button>
+                        <img src="./assets/images/logo-es.png" style="display: none;">
+                        <button class="button-click" onclick="btts_edicao(4)">CONSULTAR</button>
+                        <button class="button-click" onclick="btts_edicao(5)">LIMPAR</button>
+                        <button class="button-click" onclick="btts_edicao(6)">VOLTAR</button>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <div class="div1">
+                <h2>Dev. Full-Stack</h2>
+                <li>Bianca Araujo Coelho <a href="https://github.com/BrytanniADJ">Github</a> <a href="https://linkedin.com/in/bianca-ara%C3%BAjo-b03b3b205">LinkedIn</a></li>
+                <li>Lucas Bernardo Ribeiro Siqueira <a href="https://github.com/RickSanchez1029">Github</a> <a href="https://linkedin.com/in/lucas-ribeiro-23a39a302">LinkedIn</a></li>
+                <li>Maria Eduarda Fernandes Costa</li>
+            </div>
+            <div class="div3">
+                <h2>Dev. Backend</h2>
+                <li>Maria Clara Damasceno Serro <a href="https://github.com/krara07">Github</a></li>
+            </div>
+            <div class="div4">
+                <h2>Dev. Frontend</h2>
+                <li>Caique Romulo Araujo de Jesus</li>
+                <li>Diego Santos Luiz</li>
+            </div>
+            <div class="div2">
+                <img src="./assets/images/senac_logo.png" alt="Logo Senac" title="Logo Senac">
+                <h2>Senac em Minas</h2>
+                <div class="senac">
+                    <img class="icon" data-type="local" src="./assets/images/local-es.png" alt="Ícone de Localização">
+                    <p>Rua José Duarte de Paiva, 775 - Santa Luzia, Sete Lagoas - MG</p>
+                </div>
+                <div class="senac">
+                    <a href="https://www.facebook.com/senacminas/"><img class="icon" data-type="facebook" src="./assets/images/facebook-es.png" alt="Facebook"></a>
+                    <a href="https://www.twitter.com/senacminas/"><img class="icon" data-type="twitter" src="./assets/images/twitter-es.png" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/user/SenacMinasOficial"><img class="icon" data-type="youtube" src="./assets/images/youtube-es.png" alt="Youtube"></a>
+                    <a href="http://www.linkedin.com/company/senac-minas"><img class="icon" data-type="linkedin" src="./assets/images/linkedin-es.png" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/senacminas/"><img class="icon" data-type="instagram" src="./assets/images/instagram-es.png" alt="Instagram"></a>
+                </div>
+            </div> <!--Senac-->
+        </footer>
+        <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+        <script src="./assets/js/script.js"></script> <!-- Caminho do script do site -->
+        <script src="./assets/js/mysql.js"></script> <!-- Script para conexão php -->
+    </body>
+</html>
+
+<!-- <abbr></abbr> -->

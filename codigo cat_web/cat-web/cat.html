@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/reset.css"> <!-- Link do caminho para a página de reset do estilo do site -->
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link do caminho para a página do estilo do site -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="./assets/images/formulario-icon.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>ProSafe - CAT</title> <!-- Título -->
+    </head>
+    <body>
+        <header>
+            <div class="left">
+                <img alt="Logo" src="./assets/images/logo-es.png" class="img-logo" onclick="modos()" title="Logo ProSafe">
+                <a href="./main.html"><h1 class="h1">ProSafe - CAT</h1></a>
+            </div>
+        </header>
+        <main class="cat-inicio">
+            <div class="margin"></div>
+            <section class="titulo sec1">
+                <h2>Tipo de comunicação de acidente de trabalho</h2>
+                <div class="cat-div">
+                    <p>* Tipo de CAT:</p>
+                    <select class="max-width-cat selects" name="tipoCat" id="tipoCat">
+                        <option value="0">Selecione o tipo da CAT</option>
+                        <option value="1">Inicial</option>
+                        <option value="2">Reabertura</option>
+                        <option value="3">Comunicação de Óbito</option>
+                    </select>
+                </div>
+            </section>
+            <section class="titulo sec2" id="cat-part2"> <!-- style="visibility: hidden;" -->
+                <h2>Pesquisar</h2>
+                <div class="display-center">
+                    <div class="cat-sec2">
+                        <!-- Primeira Parte -->
+                        <p class="inicial-cat">* Emitente:</p> <!-- Inicial -->
+                        <p class="inicial-cat">* Filiação do Acidentado:</p> <!-- Inicial -->
+    
+                        <p class="reabertura-cat obito-cat">* Número da CAT:</p> <!-- Reabertura / Comunicação de Óbito -->
+    
+                        <p id="obito-cat" class="obito-cat">* Data Óbito</p> <!-- Comunicação de Óbito -->
+    
+                        <!-- Segunda Parte -->
+                        <p id="central-cat">* Tipo Empregador:</p> <!-- Pergunta central -->
+
+                        <p class="cnpj-cat" style="display: none;">* Número CNPJ:</p> <!-- Demais Opções, só uma visível -->
+                        <p class="cei-cat" style="display: none;">* Número CEI:</p>
+                        <p class="cpf-cat" style="display: none;">* Número CPF:</p>
+                        <p class="nit-cat" style="display: none;">* Número NIT/PIS/PASEP:</p>
+                        <p class="caepf-cat" style="display: none;">* Número CAEPF:</p>
+                        <p class="cno-cat" style="display: none;">* Número CNO:</p>
+    
+                        <!-- Terceira Perte (Sempre aparece) -->
+                        <p>* CPF do acidentado:</p>
+                        <p>* Data do acidente:</p>
+                    </div>
+                    <div class="cat-sec2 txt-column">
+                        <!-- Primeira Parte -->
+                        <select class="inicial-cat max-width-cat" name="emitente-CAT" id="emitente-cat"> <!-- Inicial -->
+                            <option value="0">Selecione o Emitente da CAT</option>
+                            <option value="1">Empregador</option>
+                            <option value="2">Empregador Doméstico</option>
+                            <option value="3">Trabalhador</option>
+                            <option value="4">Sindicato</option>
+                            <option value="5" title="Tomador de serviço avulso ou Órgão gestor de mão de obra">TSA ou OGMO</option>
+                            <option value="6">Dependentes</option>
+                            <option value="7">Autoridade Pública</option>
+                            <option value="8">Médico</option>
+                        </select>
+
+                        <select class="inicial-cat max-width-cat" name="filiacao-CAT" id="filiacao-cat"> <!-- Inicial -->
+                            <option value="0">Selecione a Filiação do Acidentado</option>
+                            <option value="1">1 - Empregado</option>
+                            <option value="2">2 - Trabalhador Avulso</option>
+                            <option value="3">7 - Segurado Especial</option>
+                            <option value="4">9 - Empregado Doméstico</option>
+                        </select>
+
+                        <div class="display-center reabertura-cat obito-cat" id="numero-cat" title="Digite apenas números"> <!-- Reabertura / Comunicação de Óbito -->
+                            <input id="rea-obi1" type="text" maxlength="4" class="input-cat1">
+                            <input id="rea-obi2" type="text" maxlength="6" class="input-cat2">
+                            <input id="rea-obi3" type="text" maxlength="1" class="input-cat3">
+                        </div>
+
+                        <input id="obito-mask" type="date" class="date data_obito-cat obito-cat"> <!-- Comunicação de Óbito -->
+
+                        <select name="tipo_empre-cat" id="tipo_empre-cat">
+                            <option value="0">Selecione uma Opção</option>
+                            <option value="1">1 - CNPJ</option>
+                            <option value="2">2 - CEI</option>
+                            <option value="3">3 - CPF</option>
+                            <option value="4">4 - NIT/PIS/PASEP</option>
+                            <option value="5">5 - CAEPF</option>
+                            <option value="6">6 - CNO</option>
+                        </select>
+
+                        <input type="text" id="cnpj-mask" class="cnpj-cat cnpj-mask" style="display: none;">
+                        <input type="text" id="cei-mask" class="cei-cat cei-mask" style="display: none;">
+                        <input type="text" id="cpf-mask" class="cpf-cat cpf-mask" style="display: none;">
+                        <input type="text" id="nit-mask" class="nit-cat nit-mask" style="display: none;">
+                        <input type="text" id="caepf-mask" class="caepf-cat caepf-mask" style="display: none;">
+                        <input type="text" id="cno-mask" class="cno-cat cno-mask" style="display: none;">
+
+                        <!-- Terceira Parte -->
+                        <input id="cpf_obri" class="cpf-cat-pt3 cpf-mask" type="text">
+                        <input id="date_obri" class="date date-obri" type="date">
+                    </div>
+                </div>
+                <button onclick="cat_proximo1()" class="button-click">Próximo</button>
+            </section>
+            <section id="campo3" class="titulo sec3 display-center"> <!-- style="display:none; "-->
+                <h2>Empregador</h2>
+                <div class="display-center display-duplo">
+                    <div class="display-center">
+                        <div class="cat-sec2">
+                            <p>CEP:</p>
+                            <p>Estado:</p>
+                            <p>Cidade:</p>
+                            <p>Bairro:</p>
+                            <p>Rua:</p>
+                        </div>
+                        <div class="txt-column cat-sec2">
+                            <input id="cep-pesquisa" class="cep-mask" type="text">
+                            <select name="estado">
+                                <option value="0">Selecione uma Opção</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="display-center">
+                        <div class="cat-sec2">
+                            <p>Tipo/Num doc:</p>
+                            <p>CNAE:</p>
+                            <p>Telefone:</p>
+                            <p>Razão Social:</p>
+                            <p>Nome:</p>
+                        </div>
+                        <div class="txt-column cat-sec2">
+                            <input type="text">
+                            <input class="cnae-mask" type="text">
+                            <input class="tell-mask" type="text">
+                            <input type="text">
+                            <input type="email">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="campo4" class="titulo sec3">
+                <h2>Acidentado</h2>
+                <div class="display-center display-duplo">
+                    <div class="display-center">
+                        <div class="cat-sec2">
+                            <p>Nome:</p>
+                            <p>Nome da mãe:</p>
+                            <p>Dt. Nasc.:</p>
+                            <p>Gr. Inst.:</p>
+                            <p>Estado civil:</p>
+                            <p>CTPS:</p>
+                            <p>MIT/PIS/PASEP:</p>
+                            <p>Telefone:</p>
+                            <p>CBO:</p>
+                        </div>
+                        <div class="txt-column cat-sec2">
+                            <input type="text">
+                            <input type="text">
+                            <input title="Data de Nascimento" type="date">
+                            <select title="Grau de Instrução" name="" id="">
+                                <option value="0">Selecione uma Opção</option>
+                                <option value="1">Educação Infantil</option>
+                                <option value="2">Ensino Fundamental Incompleto</option>
+                                <option value="3">Ensino Fundamental Completo</option>
+                                <option value="4">Ensino Médio Incompleto</option>
+                                <option value="5">Ensino Médio Completo</option>
+                                <option value="6">Curso Técnico</option>
+                                <option value="7">Ensino Superior Incompleto</option>
+                                <option value="8">Ensino Superior Completo</option>
+                                <option value="9">Pós-graduação</option>
+                                <option value="10">Mestrado</option>
+                                <option value="11">Doutorado</option>
+                                <option value="12">EJA - Ensino Fundamental</option>
+                                <option value="13">EJA - Ensino Médio</option>                                
+                            </select>
+                            <select name="" id="">
+                                <option value="0">Selecione uma Opção</option>
+                                <option value="1">Solteiro(a)</option>
+                                <option value="2">Casado(a)</option>
+                                <option value="3">Divorciado(a)</option>
+                                <option value="4">Viúvo(a)</option>
+                                <option value="5">Separado(a)</option>
+                                <option value="6">União Estável</option>
+                                <option value="7">Outro</option>
+                            </select>
+                            <input class="ctps-mask" type="text">
+                            <input class="nit-mask" type="text">
+                            <input class="tell-mask" type="text">
+                            <input title="Carteira de Trabalho" class="cbo-mask" type="text">
+                        </div>
+                    </div>
+                    <div class="display-center">
+                        <div class="cat-sec2">
+                            <p>Apos.:</p>
+                            <p>Sexo:</p>
+                            <p>Remuneração:</p>
+                            <p>RG:</p>
+                            <p>CEP:</p>
+                            <p>Estado:</p>
+                            <p>Cidade:</p>
+                            <p>Bairro:</p>
+                            <p>Rua:</p>
+                        </div>
+                        <div class="txt-column cat-sec2">
+                            <input type="date">
+                            <select name="" id="">
+                                <option value="0">Selecione uma Opção</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Feminino</option>
+                                <option value="3">Outro</option>
+                                <option value="4">Não informado</option>
+                            </select>
+                            <input class="num-mask" type="text">
+                            <input title="Identidade" class="rg-mask" type="text">
+                            <input class="cep-mask" type="text">
+                            <select name="estado">
+                                <option value="0">Selecione uma Opção</option>
+                                <option value="1">Acre</option>
+                                <option value="2">Alagoas</option>
+                                <option value="3">Amapá</option>
+                                <option value="4">Amazonas</option>
+                                <option value="5">Bahia</option>
+                                <option value="6">Ceará</option>
+                                <option value="7">Distrito Federal</option>
+                                <option value="8">Espírito Santo</option>
+                                <option value="9">Goiás</option>
+                                <option value="10">Maranhão</option>
+                                <option value="11">Mato Grosso</option>
+                                <option value="12">Mato Grosso do Sul</option>
+                                <option value="13">Minas Gerais</option>
+                                <option value="14">Pará</option>
+                                <option value="15">Paraíba</option>
+                                <option value="16">Paraná</option>
+                                <option value="17">Pernambuco</option>
+                                <option value="18">Piauí</option>
+                                <option value="19">Rio de Janeiro</option>
+                                <option value="20">Rio Grande do Norte</option>
+                                <option value="21">Rio Grande do Sul</option>
+                                <option value="22">Rondônia</option>
+                                <option value="23">Roraima</option>
+                                <option value="24">Santa Catarina</option>
+                                <option value="25">São Paulo</option>
+                                <option value="26">Sergipe</option>
+                                <option value="27">Tocantins</option>
+                            </select>
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="campo5" class="titulo sec3">
+                <h2>Acidente</h2>
+            </section>
+        </main>
+        <footer>
+            <div class="div1">
+                <h2>Dev. Full-Stack</h2>
+                <li>Bianca Araujo Coelho <a href="https://github.com/BrytanniADJ">Github</a> <a href="https://linkedin.com/in/bianca-ara%C3%BAjo-b03b3b205">LinkedIn</a></li>
+                <li>Lucas Bernardo Ribeiro Siqueira <a href="https://github.com/RickSanchez1029">Github</a> <a href="https://linkedin.com/in/lucas-ribeiro-23a39a302">LinkedIn</a></li>
+                <li>Maria Eduarda Fernandes Costa</li>
+            </div>
+            <div class="div3">
+                <h2>Dev. Backend</h2>
+                <li>Maria Clara Damasceno Serro <a href="https://github.com/krara07">Github</a></li>
+            </div>
+            <div class="div4">
+                <h2>Dev. Frontend</h2>
+                <li>Caique Romulo Araujo de Jesus</li>
+                <li>Diego Santos Luiz</li>
+            </div>
+            <div class="div2">
+                <img src="./assets/images/senac_logo.png" alt="Logo Senac" title="Logo Senac">
+                <h2>Senac em Minas</h2>
+                <div class="senac">
+                    <img class="icon" data-type="local" src="./assets/images/local-es.png" alt="Ícone de Localização">
+                    <p>Rua José Duarte de Paiva, 775 - Santa Luzia, Sete Lagoas - MG</p>
+                </div>
+                <div class="senac">
+                    <a href="https://www.facebook.com/senacminas/"><img class="icon" data-type="facebook" src="./assets/images/facebook-es.png" alt="Facebook"></a>
+                    <a href="https://www.twitter.com/senacminas/"><img class="icon" data-type="twitter" src="./assets/images/twitter-es.png" alt="Twitter"></a>
+                    <a href="https://www.youtube.com/user/SenacMinasOficial"><img class="icon" data-type="youtube" src="./assets/images/youtube-es.png" alt="Youtube"></a>
+                    <a href="http://www.linkedin.com/company/senac-minas"><img class="icon" data-type="linkedin" src="./assets/images/linkedin-es.png" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/senacminas/"><img class="icon" data-type="instagram" src="./assets/images/instagram-es.png" alt="Instagram"></a>
+                </div>
+            </div> <!--Senac-->
+        </footer>
+        <script src="./assets/js/script.js"></script> <!-- Caminho do script do site -->
+    </body>
+</html>
