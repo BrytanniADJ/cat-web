@@ -29,6 +29,14 @@
         </header>
         <!-- Comentário -->
         <main class="index">
+            <section id="sec_modal" class="modal" style="visibility: hidden;">
+                <div class="modal">
+                    <button onclick="main_modal(2)">X</button>
+                    <div>
+                        <img src="./assets/images/formulario.jpg" alt="">
+                    </div>
+                </div>
+            </section>
             <section class="inicio border-bottom">
                 <img class="icon" data-type="maleta" src="./assets/images/maleta-es.png" alt="Maleta" id="maleta">
                 <h1>Comunicação de Acidente de Trabalho - ProSafe</h1>
@@ -53,7 +61,7 @@
             <section class="modify border-bottom">
                 <div>
                     <h2>Última Modificação:</h2>
-                    <h2 class="data">21/06/2024</h2>
+                    <h2 class="data">23/09/2024</h2>
                 </div>
             </section>
             <section id="perguntas" class="resumo">
@@ -90,7 +98,7 @@
                 <div style="display: none;" id="main-quest3">
                     <p><strong class="num">1</strong> Preencher e enviar o formulário de acidente de trabalho (CAT)<br>
                         <ul>
-                            <li>Acesse o <a href="./cat.html">formulário</a>.</li>
+                            <li>Acesse o <button class="button-z" onclick="main_modal(1)">formulário</button>.</li>
                             <li>Preencha todos os campos</li>
                             <img src="./assets/images/print-passo1.png">
                             <li>Passo 3 (Com img)</li>
@@ -98,7 +106,7 @@
                     </p>
                 </div>
             </section>
-        </main>       
+        </main>
         <footer>
             <div class="div1">
                 <h2>Dev. Full-Stack</h2>

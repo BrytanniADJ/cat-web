@@ -28,14 +28,16 @@
 */
 
 /* TRANSIÇÕES */
-body,
-header,
-header h1,
-header.scrolled,
-main.login section,
-input,
-label{
-    transition: background-color 1.0s, color 0.5s, border-color 0.5s;
+body, header, header.scrolled, section, input, label, button, h1, h2, a, p, textarea{
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+
+button:hover{
+    transition: background-color 0.2s;
+}
+
+img, img:hover{
+    transition: all 0.8s ease;
 }
 
 /* RE-Class */
@@ -380,8 +382,10 @@ section.resumo{
         border-radius: 100%;
         color: var(--base-negro);
     }
-    a{
+    button{
         color: var(--cores);
+        font-size: 20px;
+        cursor: pointer;
     }
     ul img{
         margin-block: 0.5vh 2vh;
@@ -394,16 +398,56 @@ section.resumo{
     }
 }
 
+section.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3; /* Certifique-se que o modal está no topo */
+    overflow: auto; /* Permite scroll se o conteúdo for maior que a tela */
+    background-color: rgba(0, 0, 0, 0.8); /* Cor do fundo com opacidade */
+    div.modal{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+            font-size: 20px;
+            background-color: transparent;
+            border-radius: 50%;
+            border: none;
+            width: 40px;
+            height: 40px;
+            right: 21%;
+            top: 28%;
+            position: absolute;
+            cursor: pointer;
+            color: var(--gris5);
+        }
+        button:hover{
+            color: var(--cores)
+        }
+        img{
+            margin-top: 35%;
+            width: 50%;
+        }
+    }
+}
+
 /* PÁGINA LOGIN -------------------------------------------------------------------------------- */
 
-html, body.login{
+html, body.login, body.consulta{
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-main.login{
+main.login, main.consulta{
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -467,7 +511,7 @@ main.login section.login{
     }
 }
 
-main.login section.logado{
+main.consulta section.consulta{
     margin-inline: 1in;
     background-color: var(--gris90);
     border-radius: 10px;
