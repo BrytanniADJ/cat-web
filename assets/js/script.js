@@ -17,28 +17,40 @@ function modos(){
     // Aplica o estilo com base no modo
     if(!ativar_modos){
         // Modo claro
-        document.documentElement.style.setProperty('--base-negro', '#ffffff');
-        document.documentElement.style.setProperty('--gris100', '#f2f2f2');
-        document.documentElement.style.setProperty('--gris90', '#f8f8fa');
-        document.documentElement.style.setProperty('--gris80', '#f6f7f8');
-        document.documentElement.style.setProperty('--gris70', '#f1f3f1');
-        document.documentElement.style.setProperty('--gris60', '#eae7ea');
-        document.documentElement.style.setProperty('--gris10', '#616b77');
-        document.documentElement.style.setProperty('--gris5', '#1f2328');
-        document.documentElement.style.setProperty('--cores', '#ff6b00');
-        document.documentElement.style.setProperty('--cores-es', '#ffa05c');
+        document.documentElement.style.setProperty('--gris100', '#ffffff'); /* Mais claro: branco */
+        document.documentElement.style.setProperty('--gris90',  '#e6e6e6');
+        document.documentElement.style.setProperty('--gris80',  '#cccccc');
+        document.documentElement.style.setProperty('--gris70',  '#b3b3b3');
+        document.documentElement.style.setProperty('--gris60',  '#999999');
+        document.documentElement.style.setProperty('--gris50',  '#808080'); /* 50% branco (cor média clara) */
+        document.documentElement.style.setProperty('--gris40',  '#666666');
+        document.documentElement.style.setProperty('--gris30',  '#4d4d4d');
+        document.documentElement.style.setProperty('--gris20',  '#333333');
+        document.documentElement.style.setProperty('--gris10',  '#1a1a1a');
+        document.documentElement.style.setProperty('--gris0' ,  '#808080'); /* Mais escuro: cinza médio */
+
+        document.documentElement.style.setProperty('--txt',  '#4d4d4d'); /* Texto */
+
+        document.documentElement.style.setProperty('--cores',  '#ffa500'); /* Laranja */
+        document.documentElement.style.setProperty('--cores-es',  '#ff8c00'); /* Laranja escuro */
     }else{
         // Modo escuro
-        document.documentElement.style.setProperty('--base-negro', '#010409');
-        document.documentElement.style.setProperty('--gris100', '#0d0d0d');
-        document.documentElement.style.setProperty('--gris90', '#212121');
-        document.documentElement.style.setProperty('--gris80', '#242424');
-        document.documentElement.style.setProperty('--gris70', '#2b2b2b');
-        document.documentElement.style.setProperty('--gris60', '#383838');
-        document.documentElement.style.setProperty('--gris10', '#d4d4d4');
-        document.documentElement.style.setProperty('--gris5', '#ececea');
-        document.documentElement.style.setProperty('--cores', '#0094ff');
-        document.documentElement.style.setProperty('--cores-es', '#005694');
+        document.documentElement.style.setProperty('--gris100', '#000000'); /* Mais escuro: preto */
+        document.documentElement.style.setProperty('--gris90',  '#141414');
+        document.documentElement.style.setProperty('--gris80',  '#282828');
+        document.documentElement.style.setProperty('--gris70',  '#3D3D3D');
+        document.documentElement.style.setProperty('--gris60',  '#515151');
+        document.documentElement.style.setProperty('--gris50',  '#666666'); /* 50% preto (cor média escura) */
+        document.documentElement.style.setProperty('--gris40',  '#7A7A7A');
+        document.documentElement.style.setProperty('--gris30',  '#808080');
+        document.documentElement.style.setProperty('--gris20',  '#8C8C8C');
+        document.documentElement.style.setProperty('--gris10',  '#999999');
+        document.documentElement.style.setProperty('--gris0' ,  '#808080'); /* Cor de referência para mais claro */
+
+        document.documentElement.style.setProperty('--txt',  '#D3D3D3'); /* Texto */
+
+        document.documentElement.style.setProperty('--cores',  '#0094ff'); /* Azul */
+        document.documentElement.style.setProperty('--cores-es',  '#005694'); /* Azul escuro */
     }
 
     // Atualiza a imagem do modo
@@ -219,12 +231,6 @@ document.getElementById("tipo_empre-cat").addEventListener('change', function(){
 document.getElementById("cep-pesquisa").addEventListener('change'), function(){
     var cep = document.getElementById('cep-pesquisa').value.replace(/\D/g, '');
 }
-
-function cat_proximo1(n){
-
-}
-
-// página 2 login
 
 // pesquisa página login
 function telas_none(){ // versão otimizada de uma função
