@@ -25,16 +25,16 @@
             <section id="section_login2" class="consulta" style="display: block;">
                 <section class="head conteiner">
                     <div class="display-center">
-                        <button title="Empregador" class="tabelas tbl-1" onclick="btts_sections(1)">FUNCIONÁRIO</button>
-                        <button title="Acidente" class="tabelas" onclick="btts_sections(2)">EMPRESA</button>
-                        <button title="Acidente" class="tabelas" onclick="btts_sections(3)">MÉDICO</button>
+                        <button style="border-bottom: 1px solid var(--cores);" title="Empregador" class="tabelas tbl-1" onclick="btts_sections(1, this)">FUNCIONÁRIO</button>
+                        <button title="Acidente" class="tabelas" onclick="btts_sections(2, this)">EMPRESA</button>
+                        <button title="Acidente" class="tabelas" onclick="btts_sections(3, this)">MÉDICO</button>
                         <img alt="Logo" src="./assets/images/logo-es.png" class="img-logo" onclick="modos()" id="logo_bd">
-                        <button title="Acidentado" class="tabelas" onclick="btts_sections(4)">CID</button>
-                        <button title="Medico" class="tabelas" onclick="btts_sections(5)">TIPO DE LESÃO</button>
-                        <button title="Medico" class="tabelas tbl-6" onclick="btts_sections(6)">AGENTE CAUSADOR</button>
+                        <button title="Acidentado" class="tabelas" onclick="btts_sections(4, this)">CID</button>
+                        <button title="Medico" class="tabelas" onclick="btts_sections(5, this)">TIPO DE LESÃO</button>
+                        <button title="Medico" class="tabelas tbl-6" onclick="btts_sections(6, this)">AGENTE CAUSADOR</button>
                     </div>
                 </section>
-                <section class="pesquisa" id="bd_1" style="display: none;">
+                <section class="pesquisa" id="bd_1" style="display: block;">
                     <div class="separador display-center">
                         <div class="txt-column">
                             <label>COD FUNCIONÁRIO:</label>
@@ -275,7 +275,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="pesquisa" id="bd_5" style="display: block;">
+                <section class="pesquisa" id="bd_5" style="display: none;">
                     <div class="separador display-center">
                         <div class="txt-column">
                             <label>COD DA LESÃO:</label>
@@ -302,12 +302,12 @@
                 </section>
                 <section class="conteiner">
                     <div class="botoes display-center">
-                        <button class="button-click" onclick="btts_edicao(1)">CADASTRAR</button>
-                        <button class="button-click" onclick="btts_edicao(2)">ATUALIZAR</button>
-                        <button class="button-click" onclick="btts_edicao(3)">EXCLUIR</button>
-                        <button class="button-click" onclick="btts_edicao(4)">CONSULTAR</button>
-                        <button class="button-click" onclick="btts_edicao(5)">LIMPAR</button>
-                        <button class="button-click" onclick="btts_edicao(6)">VOLTAR</button>
+                        <button class="button-click" onclick="window.location.href='./main.html'">VOLTAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(1, 1)">CADASTRAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(2, 1)">ATUALIZAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(4, 1)">CONSULTAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(5, 1)">LIMPAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(3, 1)">EXCLUIR</button>
                     </div>
                 </section>
             </section>
@@ -327,7 +327,7 @@
             </div>
             <div class="div4">
                 <h2>Dev. Frontend</h2>
-                <li>Caique Romulo Araujo de Jesus</li>
+                <li>Caique Romulo Araujo de Jesus <a href="https://github.com/caiquearaujo7">Github</a></li>
                 <li>Diego Santos Luiz</li>
                 <li>Diego Mendes Cunha <a href="https://github.com/mendesdiego2024">Github</a> <a href="https://www.linkedin.com/in/diego-mendes-11425a228">LinkedIn</a></li>
             </div>

@@ -1,22 +1,20 @@
 :root{
-    --base-negro: #010409; /* Cor Base */
-    --gris100: #0d0d0d; /* Modo Claro */
-    --gris90: #212121; /* Header */
-    --gris80: #242424; /* Botões */
-    --gris70: #2b2b2b;
-    --gris60: #383838;
-    --gris50: #828282; /* Border CAT */
-    --gris20: #a0a0a0;
-    --gris30: #b3b3b3;
-    --gris10: #d4d4d4; /* Subtítulo */
-    --gris5: #ececea; /* texto principal */
+    --gris100: #000000; /* Mais escuro: preto */
+    --gris90:  #141414; /* 90% preto */
+    --gris80:  #282828; /* 80% preto */
+    --gris70:  #3D3D3D; /* 70% preto */
+    --gris60:  #515151; /* 60% preto */
+    --gris50:  #666666; /* 50% preto (cor média escura) */
+    --gris40:  #7A7A7A; /* 40% preto */
+    --gris30:  #808080; /* Mais claro: cinza médio */
+    --gris20:  #8C8C8C; /* 20% mais claro */
+    --gris10:  #999999; /* 10% mais claro */
+    --gris0 :  #808080; /* Cor de referência para mais claro */
 
-    --white: #ffffff;
+    --txt: #D3D3D3;
 
     --cores: #0094ff; /* Azul e Laranja */
     --cores-es: #005694;
-
-    --img-eye: url('../images/eye-azul.png');
 }
 
 /* Unidades de medida (ordem):
@@ -60,7 +58,7 @@ img, img:hover{
     border-color: var(--gris60);
     background-color: var(--gris90);
     cursor: pointer;
-    color: var(--gris10);
+    color: var(--txt);
 }
 
 .button-z{
@@ -88,7 +86,6 @@ img, img:hover{
 .display-justify{
     display: flex;
     justify-content: space-between;
-    /* justify-content: center; */
     div{
         margin: 0px 10vh;
     }
@@ -116,38 +113,35 @@ img, img:hover{
 
 .input{
     background-color: var(--gris90);
-    color: var(--gris10);
+    color: var(--txt);
     border: 1px solid var(--gris50);
 }
 
 /* BODY */
 body{
-    background-color: var(--base-negro);
-    color: var(--gris10);
+    background-color: var(--gris100);
+    color: var(--txt);
     font-family: "Raleway", sans-serif;
+}
+
+/* Logo-modos */
+img.img-logo{
+    cursor: pointer;
+    width: 60px;
 }
 
 /* HEADER */
 header{
     width: 100%;
-    padding-top: 12px;
-    padding-bottom: 9px;
     position: fixed;
+    padding-block: 5px;
     z-index: 1;
     background-color: var(--gris90);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--gris60);
-    box-shadow: 0px 0px 40px 5px var(--gris60);
-
-    img.img-logo, img.login{
-        width: 50px;
-        cursor: pointer;
-    }
-    img.login{
-        width: 50px;
-    }
+    border-bottom: 1px solid var(--gris70);
+    box-shadow: 0px 0px 40px 5px var(--gris80);
     .center, .left{
         flex: 1;
         text-align: center;
@@ -201,9 +195,9 @@ header{
 footer{
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid var(--gris60);
+    border-top: 1px solid var(--gris90);
     background-color: var(--gris100);
-    box-shadow: 0px 0px 30px var(--gris70) inset;
+    box-shadow: 0px 0px 30px var(--gris80) inset;
 
     div{
         margin: 1vh 5vh;
@@ -321,7 +315,7 @@ main.index section.iniciar{                /* SECTION.INICIAR */
 main.index section.modify,
 section.resumo{
     margin: 1% 5%;
-    color: var(--gris10);
+    color: var(--txt);
     display: flex;
     h2.data{
         margin-left: 10px;
@@ -362,7 +356,7 @@ section.resumo{
     }
     h2{
         font-size: 3vh;
-        color: var(--gris10);
+        color: var(--txt);
     }
     p, li{
         margin-top: 5px;
@@ -376,11 +370,11 @@ section.resumo{
         margin-left: 4%;
     }
     strong.num{
-        padding: 4px 13px;
+        padding: 0.5px 11px;
         padding-bottom: 7px;
         background-color: var(--cores);
         border-radius: 100%;
-        color: var(--base-negro);
+        color: var(--gris100);
     }
     button{
         color: var(--cores);
@@ -426,7 +420,7 @@ section.modal{
             top: 28%;
             position: absolute;
             cursor: pointer;
-            color: var(--gris5);
+            color: var(--txt);
         }
         button:hover{
             color: var(--cores)
@@ -438,7 +432,7 @@ section.modal{
     }
 }
 
-/* PÁGINA LOGIN -------------------------------------------------------------------------------- */
+/* PÁGINA LOGIN ------- PÁGINA CONSULTA ---------------------------------------------------------------- */
 
 html, body.login, body.consulta{
     height: 100%;
@@ -484,7 +478,7 @@ main.login section.login{
                 border-color: var(--cores-es);
                 box-shadow: 0px 0px 10px var(--gris80) inset;
                 background-color: var(--gris100);
-                color: var(--gris10);
+                color: var(--txt);
                 text-align: center;
                 font-size: 18px;
             }
@@ -515,9 +509,9 @@ main.consulta section.consulta{
     margin-inline: 1in;
     background-color: var(--gris90);
     border-radius: 10px;
+    padding-bottom: 15px;
     section.conteiner{
         width: 100%;
-        padding-block: 10px;
         div.display-center{
             gap: 7.2vh;
         }
@@ -543,7 +537,14 @@ main.consulta section.consulta{
         cursor: pointer;
         background-color: var(--gris60);
         border: none;
-        color: var(--gris10);
+        color: var(--txt);
+        padding-block: 10px;
+    }
+    button.tbl-1{
+        border-top-left-radius: 10px;
+    }
+    button.tbl-6{
+        border-top-right-radius: 10px;
     }
     button.tabelas:hover{
         background-color: var(--gris90);
@@ -594,7 +595,7 @@ main.cat-inicio{ /* Geral 1*/
                     margin: 5px 0px;
                     background-color: var(--gris70);
                     border-color: var(--gris50);
-                    color: var(--gris10);
+                    color: var(--txt);
                 }
             }
         }
@@ -614,11 +615,11 @@ main.cat-inicio section.titulo{ /* Geral 2 */
     h2{
         position: absolute;
         padding: 10px 5px;
-        background-color: var(--base-negro);
+        background-color: var(--gris100);
         top: -25px;
         font-size: 25px;
         left: 20px;
-        color: var(--gris10);
+        color: var(--txt);
     }
     div.cat-div{
         display: flex;
@@ -629,7 +630,7 @@ main.cat-inicio section.titulo{ /* Geral 2 */
     }
     p{
         font-size: 15px;
-        color: var(--gris10);
+        color: var(--txt);
         margin-right: 10px;
         line-height: 32px;
         text-align: right;
@@ -637,7 +638,7 @@ main.cat-inicio section.titulo{ /* Geral 2 */
     select{
         background-color: var(--gris70);
         border: 1px solid var(--gris60);
-        color: var(--gris10);
+        color: var(--txt);
         margin: 5px 0px;
     }
 }
@@ -709,7 +710,7 @@ main.cat-final{
         padding-block: 1vh;
     }
     h1{
-        color: var(--gris10);
+        color: var(--txt);
     }
     div{
         align-items: center;
@@ -726,7 +727,7 @@ main.cat-final{
     td input, td select{
         width: 98%;
         background-color: transparent;
-        color: var(--gris10);
+        color: var(--txt);
         font-size: 17px;
         border: none;
         padding: 5px;
@@ -735,10 +736,10 @@ main.cat-final{
         background-color: transparent;
         border: none;
         outline: none;
-        color: var(--gris10);
+        color: var(--txt);
     }
     option{
-        background-color: var(--base-negro);
+        background-color: var(--gris100);
     }
     td input[type=text]:focus{
         border: none;

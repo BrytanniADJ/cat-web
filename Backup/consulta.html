@@ -17,23 +17,24 @@
     <body class="consulta">
         <header id="header">
             <div class="left">
-                <a href="./main.html" style="display: flex; justify-content: center;"><h1 class="h1">ProSafe -</h1><h1 id="txt_name">- LOGIN</h1></a>
+                <a href="./main.html" style="display: flex; justify-content: center;"><h1 class="h1">Login</h1></a>
             </div>
         </header>
+
         <main class="consulta">
             <section id="section_login2" class="consulta" style="display: block;">
                 <section class="head conteiner">
                     <div class="display-center">
-                        <button title="Empregador" class="tabelas" onclick="btts_sections(1)">FUNCIONÁRIO</button>
-                        <button title="Acidente" class="tabelas" onclick="btts_sections(2)">EMPRESA</button>
-                        <button title="Acidente" class="tabelas" onclick="btts_sections(3)">MÉDICO</button>
+                        <button style="border-bottom: 1px solid var(--cores);" title="Empregador" class="tabelas tbl-1" onclick="btts_sections(1, this)">FUNCIONÁRIO</button>
+                        <button title="Acidente" class="tabelas" onclick="btts_sections(2, this)">EMPRESA</button>
+                        <button title="Acidente" class="tabelas" onclick="btts_sections(3, this)">MÉDICO</button>
                         <img alt="Logo" src="./assets/images/logo-es.png" class="img-logo" onclick="modos()" id="logo_bd">
-                        <button title="Acidentado" class="tabelas" onclick="btts_sections(4)">CID</button>
-                        <button title="Medico" class="tabelas" onclick="btts_sections(5)">TIPO DE LESÃO</button>
-                        <button title="Medico" class="tabelas" onclick="btts_sections(6)">AGENTE CAUSADOR</button>
+                        <button title="Acidentado" class="tabelas" onclick="btts_sections(4, this)">CID</button>
+                        <button title="Medico" class="tabelas" onclick="btts_sections(5, this)">TIPO DE LESÃO</button>
+                        <button title="Medico" class="tabelas tbl-6" onclick="btts_sections(6, this)">AGENTE CAUSADOR</button>
                     </div>
                 </section>
-                <section class="pesquisa" id="bd_1" style="display: none;">
+                <section class="pesquisa" id="bd_1" style="display: block;">
                     <div class="separador display-center">
                         <div class="txt-column">
                             <label>COD FUNCIONÁRIO:</label>
@@ -274,52 +275,44 @@
                         </div>
                     </div>
                 </section>
-                <section class="pesquisa" id="bd_5" style="display: block;">
+                <section class="pesquisa" id="bd_5" style="display: none;">
                     <div class="separador display-center">
-                        <div class="campos campo1 display-center">
-                            <div class="txt-column">
-                                <label>COD DA LESÃO:</label>
-                                <input type="text" class="input">
-                            </div>
-                            <div class="txt-column">
-                                <label>DESCRIÇÃO:</label>
-                                <textarea class="input">Descrição da Lesão...</textarea>
-                            </div>
+                        <div class="txt-column">
+                            <label>COD DA LESÃO:</label>
+                            <input type="text" class="input">
+                        </div>
+                        <div class="txt-column">
+                            <label>DESCRIÇÃO:</label>
+                            <textarea class="input">Descrição da Lesão...</textarea>
                         </div>
                     </div>
                 </section>
                 <section class="pesquisa" id="bd_6" style="display: none;">
                     <div class="separador display-center">
-                        <div class="display-center">
-                            <div class="txt-column txt-div1">
-                                <label for="cod">COD:</label>
+                        <div class="separador display-center">
+                            <div class="txt-column">
+                                <label>COD:</label>
+                                <input type="text" class="input">
                             </div>
                             <div class="txt-column">
-                                <input class="input" type="text">
+                                <label>AGENTE CAUSADOR:</label>
+                                <textarea class="input"></textarea>
                             </div>
                         </div>
-                        <div class="campos campo1 display-center">
-                            <div class="txt-column txt-div1">
-                                <label for="cod">AGENTE CAUSADOR:</label>
-                            </div>
-                            <div class="txt-column">
-                                <input class="input" type="text">
-                            </div>
-                        </div>
-                    </div>
                 </section>
                 <section class="conteiner">
                     <div class="botoes display-center">
-                        <button class="button-click" onclick="btts_edicao(1)">CADASTRAR</button>
-                        <button class="button-click" onclick="btts_edicao(2)">ATUALIZAR</button>
-                        <button class="button-click" onclick="btts_edicao(3)">EXCLUIR</button>
-                        <button class="button-click" onclick="btts_edicao(4)">CONSULTAR</button>
-                        <button class="button-click" onclick="btts_edicao(5)">LIMPAR</button>
-                        <button class="button-click" onclick="btts_edicao(6)">VOLTAR</button>
+                        <button class="button-click" onclick="window.location.href='./main.html'">VOLTAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(1, 1)">CADASTRAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(2, 1)">ATUALIZAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(4, 1)">CONSULTAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(5, 1)">LIMPAR</button>
+                        <button class="button-click btts_cadastro" onclick="btts_edicao(3, 1)">EXCLUIR</button>
                     </div>
                 </section>
             </section>
         </main>
+        
         <footer>
             <div class="div1">
                 <h2>Dev. Full-Stack</h2>
@@ -354,7 +347,6 @@
                 </div>
             </div> <!--Senac-->
         </footer>
-        <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
         <script src="./assets/js/script.js"></script> <!-- Caminho do script do site -->
         <script src="./assets/js/mysql.js"></script> <!-- Script para conexão php -->
     </body>

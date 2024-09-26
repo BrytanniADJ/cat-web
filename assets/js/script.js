@@ -239,28 +239,44 @@ function telas_none(){ // versão otimizada de uma função
     }
 }
 
-function btts_sections(n) {
+function btts_sections(button, screen){
+    let botoes = document.getElementsByClassName("tabelas");
+    let btts_cadastros = document.getElementsByClassName("btts_cadastro");
+
+    // Remove a borda de todos os botões com a classe "tabelas"
+    for (let i = 0; i < botoes.length; i++) {
+        botoes[i].style.borderBottom = "none";
+    }
+
+    // Adiciona o evento 'onclick' para todos os botões com a classe "btts_cadastro"
+    for (let j = 0; j < btts_cadastros.length; j++) {
+        btts_cadastros[j].onclick = function (){
+            btts_edicao(button, j+1); // Aqui use 'j' para referenciar o botão clicado
+        }
+    }
+
     // Chama a função para esconder todos os elementos
     telas_none();
 
     // Exibe a tela de acordo com o botão
-    document.getElementById(`bd_${n}`).style.display = "block";
+    screen.style.borderBottom = "1px solid var(--cores)";
+    document.getElementById(`bd_${button}`).style.display = "block";
 }
 
-function quests(n){ // mudar para fazer o inverso e trocar imagens de acordo com o modo
-    const quest = document.getElementById(`main-quest${n}`)
+function quests(option){ // mudar para fazer o inverso e trocar imagens de acordo com o modo
+    const quest = document.getElementById(`main-quest${option}`)
     if(quest.style.display == "block"){ // identifica se o display está 'block'
         quest.style.display = "none"; // apaga o texto
-        document.getElementById(`select${n}`).style.transform = 'scaleY(1)'; // volta a versão original do select
+        document.getElementById(`select${option}`).style.transform = 'scaleY(1)'; // volta a versão original do select
     }else{
         quest.style.display = "block";
-        document.getElementById(`select${n}`).style.transform = 'scaleY(-1)'; // inverte verticalmente o select
+        document.getElementById(`select${option}`).style.transform = 'scaleY(-1)'; // inverte verticalmente o select
     }
 }
 
 // modal página MAIN
-function main_modal(n){
-    if(n == 1){
+function main_modal(number){
+    if(number == 1){
         // Exibe o modal ao definir a visibilidade como "visible"
         document.getElementById("sec_modal").style.visibility = "visible";
     }else{
@@ -268,6 +284,83 @@ function main_modal(n){
     }
 }
 
+// Funções tela de consulta
+function btts_edicao(button, screen){ // um parâmetro para os botões e outro para as telas
+    if(button == 1){ // TELA FUNCIONÁRIO
+        if(screen == 1){
+            // CADASTRO
+        }else if(screen == 2){
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else if(button == 2){ // TELA EMPRESA
+        if(screen == 1){
+            alert(`Função ${button}, ${screen}`)
+            // CADASTRO
+        }else if(screen == 2){
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else if(button == 3){ // TELA MÉDICO
+        if(screen == 1){
+            // CADASTRO
+        }else if(screen == 2){
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else if(button == 4){ // TELA CID
+        if(screen == 1){
+            // CADASTRO
+        }else if(screen == 2){
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else if(button == 5){ // TELA TIPO DE LESÃO
+        if(screen == 1){
+            // CADASTRO
+        }else if(screen == 2){
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else{ // TELA AGENTE CAUSADOR
+        if(screen == 1){
+            // CADASTRO
+        }else if(screen == 2){
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }
+}
 
 //print da tela do documento
 // window.print()

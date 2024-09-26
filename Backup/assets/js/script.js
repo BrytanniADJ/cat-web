@@ -17,28 +17,40 @@ function modos(){
     // Aplica o estilo com base no modo
     if(!ativar_modos){
         // Modo claro
-        document.documentElement.style.setProperty('--base-negro', '#ffffff');
-        document.documentElement.style.setProperty('--gris100', '#f2f2f2');
-        document.documentElement.style.setProperty('--gris90', '#f8f8fa');
-        document.documentElement.style.setProperty('--gris80', '#f6f7f8');
-        document.documentElement.style.setProperty('--gris70', '#f1f3f1');
-        document.documentElement.style.setProperty('--gris60', '#eae7ea');
-        document.documentElement.style.setProperty('--gris10', '#616b77');
-        document.documentElement.style.setProperty('--gris5', '#1f2328');
-        document.documentElement.style.setProperty('--cores', '#ff6b00');
-        document.documentElement.style.setProperty('--cores-es', '#ffa05c');
+        document.documentElement.style.setProperty('--gris100', '#ffffff'); /* Mais claro: branco */
+        document.documentElement.style.setProperty('--gris90',  '#e6e6e6');
+        document.documentElement.style.setProperty('--gris80',  '#cccccc');
+        document.documentElement.style.setProperty('--gris70',  '#b3b3b3');
+        document.documentElement.style.setProperty('--gris60',  '#999999');
+        document.documentElement.style.setProperty('--gris50',  '#808080'); /* 50% branco (cor média clara) */
+        document.documentElement.style.setProperty('--gris40',  '#666666');
+        document.documentElement.style.setProperty('--gris30',  '#4d4d4d');
+        document.documentElement.style.setProperty('--gris20',  '#333333');
+        document.documentElement.style.setProperty('--gris10',  '#1a1a1a');
+        document.documentElement.style.setProperty('--gris0' ,  '#808080'); /* Mais escuro: cinza médio */
+
+        document.documentElement.style.setProperty('--txt',  '#4d4d4d'); /* Texto */
+
+        document.documentElement.style.setProperty('--cores',  '#ffa500'); /* Laranja */
+        document.documentElement.style.setProperty('--cores-es',  '#ff8c00'); /* Laranja escuro */
     }else{
         // Modo escuro
-        document.documentElement.style.setProperty('--base-negro', '#010409');
-        document.documentElement.style.setProperty('--gris100', '#0d0d0d');
-        document.documentElement.style.setProperty('--gris90', '#212121');
-        document.documentElement.style.setProperty('--gris80', '#242424');
-        document.documentElement.style.setProperty('--gris70', '#2b2b2b');
-        document.documentElement.style.setProperty('--gris60', '#383838');
-        document.documentElement.style.setProperty('--gris10', '#d4d4d4');
-        document.documentElement.style.setProperty('--gris5', '#ececea');
-        document.documentElement.style.setProperty('--cores', '#0094ff');
-        document.documentElement.style.setProperty('--cores-es', '#005694');
+        document.documentElement.style.setProperty('--gris100', '#000000'); /* Mais escuro: preto */
+        document.documentElement.style.setProperty('--gris90',  '#141414');
+        document.documentElement.style.setProperty('--gris80',  '#282828');
+        document.documentElement.style.setProperty('--gris70',  '#3D3D3D');
+        document.documentElement.style.setProperty('--gris60',  '#515151');
+        document.documentElement.style.setProperty('--gris50',  '#666666'); /* 50% preto (cor média escura) */
+        document.documentElement.style.setProperty('--gris40',  '#7A7A7A');
+        document.documentElement.style.setProperty('--gris30',  '#808080');
+        document.documentElement.style.setProperty('--gris20',  '#8C8C8C');
+        document.documentElement.style.setProperty('--gris10',  '#999999');
+        document.documentElement.style.setProperty('--gris0' ,  '#808080'); /* Cor de referência para mais claro */
+
+        document.documentElement.style.setProperty('--txt',  '#D3D3D3'); /* Texto */
+
+        document.documentElement.style.setProperty('--cores',  '#0094ff'); /* Azul */
+        document.documentElement.style.setProperty('--cores-es',  '#005694'); /* Azul escuro */
     }
 
     // Atualiza a imagem do modo
@@ -220,12 +232,6 @@ document.getElementById("cep-pesquisa").addEventListener('change'), function(){
     var cep = document.getElementById('cep-pesquisa').value.replace(/\D/g, '');
 }
 
-function cat_proximo1(n){
-
-}
-
-// página 2 login
-
 // pesquisa página login
 function telas_none(){ // versão otimizada de uma função
     for (let i = 1; i <= 6; i++) {
@@ -233,28 +239,44 @@ function telas_none(){ // versão otimizada de uma função
     }
 }
 
-function btts_sections(n) {
+function btts_sections(button, screen){
+    let botoes = document.getElementsByClassName("tabelas");
+    let btts_cadastros = document.getElementsByClassName("btts_cadastro");
+
+    // Remove a borda de todos os botões com a classe "tabelas"
+    for (let i = 0; i < botoes.length; i++) {
+        botoes[i].style.borderBottom = "none";
+    }
+
+    // Adiciona o evento 'onclick' para todos os botões com a classe "btts_cadastro"
+    for (let j = 0; j < btts_cadastros.length; j++) {
+        btts_cadastros[j].onclick = function (){
+            btts_edicao(button, j+1); // Aqui use 'j' para referenciar o botão clicado
+        }
+    }
+
     // Chama a função para esconder todos os elementos
     telas_none();
 
     // Exibe a tela de acordo com o botão
-    document.getElementById(`bd_${n}`).style.display = "block";
+    screen.style.borderBottom = "1px solid var(--cores)";
+    document.getElementById(`bd_${button}`).style.display = "block";
 }
 
-function quests(n){ // mudar para fazer o inverso e trocar imagens de acordo com o modo
-    const quest = document.getElementById(`main-quest${n}`)
+function quests(option){ // mudar para fazer o inverso e trocar imagens de acordo com o modo
+    const quest = document.getElementById(`main-quest${option}`)
     if(quest.style.display == "block"){ // identifica se o display está 'block'
         quest.style.display = "none"; // apaga o texto
-        document.getElementById(`select${n}`).style.transform = 'scaleY(1)'; // volta a versão original do select
+        document.getElementById(`select${option}`).style.transform = 'scaleY(1)'; // volta a versão original do select
     }else{
         quest.style.display = "block";
-        document.getElementById(`select${n}`).style.transform = 'scaleY(-1)'; // inverte verticalmente o select
+        document.getElementById(`select${option}`).style.transform = 'scaleY(-1)'; // inverte verticalmente o select
     }
 }
 
 // modal página MAIN
-function main_modal(n){
-    if(n == 1){
+function main_modal(number){
+    if(number == 1){
         // Exibe o modal ao definir a visibilidade como "visible"
         document.getElementById("sec_modal").style.visibility = "visible";
     }else{
@@ -262,6 +284,92 @@ function main_modal(n){
     }
 }
 
+// Funções tela de consulta
+function btts_edicao(button, screen){ // um parâmetro para os botões e outro para as telas
+    if(button == 1){ // TELA FUNCIONÁRIO
+        if(screen == 1){
+            // CADASTRO
+        }else if(screen == 2){
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else if(button == 2){ // TELA EMPRESA
+        if(screen == 1){
+            alert(`Função ${button}, ${screen}`);
+            // CADASTRO
+        }else if(screen == 2){
+            alert(`Função ${button}, ${screen}`);
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else if(button == 3){ // TELA MÉDICO
+        if(screen == 1){
+            alert(`Função ${button}, ${screen}`);
+            // CADASTRO
+        }else if(screen == 2){
+            alert(`Função ${button}, ${screen}`);
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else if(button == 4){ // TELA CID
+        if(screen == 1){
+            alert(`Função ${button}, ${screen}`);
+            // CADASTRO
+        }else if(screen == 2){
+            alert(`Função ${button}, ${screen}`);
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else if(button == 5){ // TELA TIPO DE LESÃO
+        if(screen == 1){
+            alert(`Função ${button}, ${screen}`);
+            // CADASTRO
+        }else if(screen == 2){
+            alert(`Função ${button}, ${screen}`);
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }else{
+        if(screen == 1){
+            alert(`Função ${button}, ${screen}`);
+            // CADASTRO
+        }else if(screen == 2){
+            alert(`Função ${button}, ${screen}`);
+            // ATUALIZAR
+        }else if(screen == 3){
+            // CONSULTAR
+        }else if(screen == 4){
+            // LIMPAR
+        }else{
+            // EXCLUIR
+        }
+    }
+}
 
 //print da tela do documento
 // window.print()
