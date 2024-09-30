@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Tela de consulta-CAT web"
+		},
+		{
+			"path": "../Tela-médico-site"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "CAT WEB 2 (diego)"
+	}
+}
