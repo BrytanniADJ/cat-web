@@ -517,6 +517,7 @@ main.consulta section.consulta{
         }
         div.botoes{
             gap: 5%;
+            margin-top: 20px;
         }
     }
     section.head{

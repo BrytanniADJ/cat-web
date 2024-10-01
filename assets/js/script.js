@@ -232,7 +232,7 @@ document.getElementById("cep-pesquisa").addEventListener('change'), function(){
     var cep = document.getElementById('cep-pesquisa').value.replace(/\D/g, '');
 }
 
-// pesquisa página login
+// pesquisa página cadastro
 function telas_none(){ // versão otimizada de uma função
     for (let i = 1; i <= 6; i++) {
         document.getElementById(`bd_${i}`).style.display = "none";
@@ -286,78 +286,76 @@ function main_modal(number){
 
 // Funções tela de consulta
 function btts_edicao(button, screen){ // um parâmetro para os botões e outro para as telas
-    if(button == 1){ // TELA FUNCIONÁRIO
-        if(screen == 1){
-            // CADASTRO
-        }else if(screen == 2){
-            // ATUALIZAR
-        }else if(screen == 3){
-            // CONSULTAR
-        }else if(screen == 4){
-            // LIMPAR
-        }else{
-            // EXCLUIR
-        }
-    }else if(button == 2){ // TELA EMPRESA
-        if(screen == 1){
-            alert(`Função ${button}, ${screen}`)
-            // CADASTRO
-        }else if(screen == 2){
-            // ATUALIZAR
-        }else if(screen == 3){
-            // CONSULTAR
-        }else if(screen == 4){
-            // LIMPAR
-        }else{
-            // EXCLUIR
-        }
-    }else if(button == 3){ // TELA MÉDICO
-        if(screen == 1){
-            // CADASTRO
-        }else if(screen == 2){
-            // ATUALIZAR
-        }else if(screen == 3){
-            // CONSULTAR
-        }else if(screen == 4){
-            // LIMPAR
-        }else{
-            // EXCLUIR
-        }
-    }else if(button == 4){ // TELA CID
-        if(screen == 1){
-            // CADASTRO
-        }else if(screen == 2){
-            // ATUALIZAR
-        }else if(screen == 3){
-            // CONSULTAR
-        }else if(screen == 4){
-            // LIMPAR
-        }else{
-            // EXCLUIR
-        }
-    }else if(button == 5){ // TELA TIPO DE LESÃO
-        if(screen == 1){
-            // CADASTRO
-        }else if(screen == 2){
-            // ATUALIZAR
-        }else if(screen == 3){
-            // CONSULTAR
-        }else if(screen == 4){
-            // LIMPAR
-        }else{
-            // EXCLUIR
-        }
-    }else{ // TELA AGENTE CAUSADOR
-        if(screen == 1){
-            // CADASTRO
-        }else if(screen == 2){
-            // ATUALIZAR
-        }else if(screen == 3){
-            // CONSULTAR
-        }else if(screen == 4){
-            // LIMPAR
-        }else{
-            // EXCLUIR
+    if(screen == 4){
+        // Limpa todas as telas
+        const inputs = document.querySelectorAll(".input-function")
+        inputs.forEach((inputElement) => {
+            // trocar o texto de todos os inputs e textarea para vazio
+            inputElement.value = "";
+        });
+    }else{
+        if(button == 1){ // TELA FUNCIONÁRIO
+            if(screen == 1){
+                // CADASTRO
+            }else if(screen == 2){
+                // ATUALIZAR
+            }else if(screen == 3){
+                // CONSULTAR
+            }else if(screen == 4){
+                // LIMPAR
+            }else{
+                // EXCLUIR
+            }
+        }else if(button == 2){ // TELA EMPRESA
+            if(screen == 1){
+                // CADASTRO
+            }else if(screen == 2){
+                // ATUALIZAR
+            }else if(screen == 3){
+                // CONSULTAR
+            }else{
+                // EXCLUIR
+            }
+        }else if(button == 3){ // TELA MÉDICO
+            if(screen == 1){
+                // CADASTRO
+            }else if(screen == 2){
+                // ATUALIZAR
+            }else if(screen == 3){
+                // CONSULTAR
+            }else{
+                // EXCLUIR
+            }
+        }else if(button == 4){ // TELA CID
+            if(screen == 1){
+                // CADASTRO
+            }else if(screen == 2){
+                // ATUALIZAR
+            }else if(screen == 3){
+                // CONSULTAR
+            }else{
+                // EXCLUIR
+            }
+        }else if(button == 5){ // TELA TIPO DE LESÃO
+            if(screen == 1){
+                // CADASTRO
+            }else if(screen == 2){
+                // ATUALIZAR
+            }else if(screen == 3){
+                // CONSULTAR
+            }else{
+                // EXCLUIR
+            }
+        }else{ // TELA AGENTE CAUSADOR
+            if(screen == 1){
+                // CADASTRO
+            }else if(screen == 2){
+                // ATUALIZAR
+            }else if(screen == 3){
+                // CONSULTAR
+            }else{
+                // EXCLUIR
+            }
         }
     }
 }

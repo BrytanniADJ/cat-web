@@ -35,7 +35,7 @@
                     </select>
                 </div>
             </section>
-            <section class="titulo sec2" id="cat-part2" style="visibility: block;"> <!-- style="visibility: hidden;" -->
+            <section class="titulo sec2" id="cat-part2"> <!-- style="visibility: hidden;" -->
                 <h2>Pesquisar</h2>
                 <div class="display-center">
                     <div class="cat-sec2">
@@ -113,9 +113,8 @@
                         <input id="date_obri" class="date date-obri" type="date">
                     </div>
                 </div>
-                <button onclick="cat_proximo(1)" class="button-click">Próximo</button>
             </section>
-            <section id="campo3" class="titulo sec3 display-center" style="visibility: block;"> <!-- style="display:none; "-->
+            <section id="campo3" class="titulo sec3 display-center"> <!-- style="display:none; "-->
                 <h2>Empregador</h2>
                 <div>
                 <div class="display-center display-duplo">
@@ -180,9 +179,8 @@
                             <input type="email">
                         </div>
                     </div>
-                    <button onclick="cat_proximo(2)" class="button-click">Próximo</button>
             </section>
-            <section id="campo4" class="titulo sec3" style="visibility: block;">
+            <section id="campo4" class="titulo sec3">
                 <h2>Acidentado</h2>
                 <div class="display-center display-duplo">
                     <div class="display-center">
@@ -293,10 +291,117 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="cat_proximo(3)" class="button-click">Próximo</button>
             </section>
-            <section id="campo5" class="titulo sec3" style="visibility: block;">
+            <section id="campo5" class="titulo sec3">
                 <h2>Acidente</h2>
+                <div class="display-center display-duplo">
+                    <div class="display-center">
+                        <div class="cat-sec2">
+                            <p>Data do Acidente:</p>
+                            <p>Horas Trabalhadas:</p>
+                            <p>Houve Afastamento?</p>
+                            <p>Local do Acidente:</p>
+                            <p>CNPJ/CGC ou CEI:</p>
+                            <p>Município do Acidente:</p>
+                            <p>Parte do Corpo:</p>
+                            <p>Sit. Geradora:</p>
+                            <p>Data de Óbito:</p>
+                        </div>
+                        <div class="txt-column cat-sec2">
+                            <input type="date">
+                            <input type="number">
+                            <select>
+                                <option value="0">Selecione uma Opção</option>
+                                <option value="1">Sim</option>
+                                <option value="2">Não</option>
+                            </select>
+                            <input type="text">
+                            <input type="text" class="cnpj-mask">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="date">
+                        </div>
+                    </div>
+                    <div class="display-center">
+                        <div class="cat-sec2">
+                            <p>Hora do Acidente:</p>
+                            <p>Tipo de Lesão:</p>
+                            <p>Reg. Policial:</p>
+                            <p>Esp. Local:</p>
+                            <p>UF do Acidente:</p>
+                            <p title="Último dia de Trabalho ou data de óbito">Últ. dia Trab. / Data Óbito:</p>
+                            <p>Agente Causador:</p>
+                            <p>Morte?</p>
+                            <p></p>
+                        </div>
+                        <div class="txt-column cat-sec2">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input title="Último dia de Trabalho ou data de óbito" type="date">
+                            <input type="text">
+                            <select>
+                                <option value="0">Selecione uma opção</option>
+                                <option value="1">Sim</option>
+                                <option value="2">Não</option>
+                            </select>
+                            <input style="visibility: hidden;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="campo6" class="titulo sec3">
+                <h2>Atestado</h2>
+                <div class="display-center display-duplo">
+                    <div class="display-center">
+                        <div class="cat-sec2">
+                            <p>Unidade:</p>
+                            <p>Data Atendimento:</p>
+                            <p>Houve Internação?</p>
+                            <p title="Natureza da Lesão">Nat. Lesão:</p>
+                            <p>CID-10</p>
+                        </div>
+                        <div class="txt-column cat-sec2">
+                            <input type="text">
+                            <input type="date">
+                            <select>
+                                <option value="0">Selecione uma opção</option>
+                                <option value="1">Sim</option>
+                                <option value="2">Não</option>
+                            </select>
+                            <input type="text">
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="display-center">
+                        <div class="cat-sec2">
+                            <p>Observações:</p>
+                            <p>CRM:</p>
+                            <p>Hora do Atendimento:</p>
+                            <p>Será afatado?</p>
+                            <p></p>
+                        </div>
+                        <div class="txt-column cat-sec2">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <select>
+                                <option value="0">Selecione uma opção</option>
+                                <option value="1">Sim</option>
+                                <option value="2">Não</option>
+                            </select>
+                            <input style="visibility: hidden;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="buttons display-center">
+                <button class="button-click">OK</button>
+                <button class="button-click" onclick="cat_cancela()">Cancelar</button>
+                <button class="button-click" onclick="impressao()">Imprimir</button>
             </section>
         </main>
         
