@@ -30,6 +30,7 @@ O **Prosafe** é um projeto desenvolvido pelos alunos da turma 060 do curso Téc
 - **Caique Rômulo Araujo de Jesus** - [GitHub](https://github.com/caiquearaujo7)
 - **Diego Santos Luiz**
 - **Diego Mendes Cunha** - [GitHub](https://github.com/mendesdiego2024) - [LinkedIn](https://www.linkedin.com/in/diego-mendes-11425a228)
+- **Poliana Santiago Souza**
 ### Desenvolvedores Backend
 - **Maria Clara Damasceno Serro** - [GitHub](https://github.com/krara07)
 - **Moisés Habacuque Gomes Pereira** - [LinkedIn](https://www.linkedin.com/in/moises-habacuque-0466502b1)
