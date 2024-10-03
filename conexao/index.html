@@ -3,10 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastros</title>
-    <!-- Link para o arquivo CSS externo -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./assets/css/reset.css"> <!-- Link do caminho para a página de reset do estilo do site -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Link do caminho para a página do estilo do site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./assets/images/formulario-icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>ProSafe - CAT</title> <!-- Título -->
 </head>
 
 <body>
@@ -212,8 +218,6 @@
                     </form>
                 </div>
 
-
-
                 <div id="empresa" class="tabcontent">
                     <form class="form" action="empresa.php" method="POST">
                         <div class="form-group form-divisao">
@@ -322,8 +326,6 @@
                     </form>
                 </div>
 
-
-
                 <div id="medico" class="tabcontent">
                     <form class="form" action="medico.php" method="POST">
                         <div class="form-group form-divisao">
@@ -370,8 +372,6 @@
                     </form>
                 </div>
 
-
-
                 <div id="cid" class="tabcontent">
                     <form class="form" action="cid.php" method="POST">
                         <div class="form-group">
@@ -396,8 +396,6 @@
                     </form>
                 </div>
 
-
-
                 <div id="tipo_lesao" class="tabcontent">
                     <form class="form" action="lesao.php" method="POST">
                         <div class="form-group">
@@ -421,8 +419,6 @@
                         </div>
                     </form>
                 </div>
-
-
 
                 <div id="agente_causador" class="tabcontent">
                     <form class="form" action="agente.php" method="POST">
@@ -455,19 +451,41 @@
             </div>
 
             <footer>
-                <h4>Desenvolvido por:</h4>
-                <p>Bianca Araújo Coelho, Caique Romulo Araújo de Jesus, Diego Mendes Cunha, Diego Santos Luiz, Lucas
-                    Bernardo Ribeiro
-                    Siqueira, Maria Clara Damasceno Serro, Maria Eduarda Fernandes Costa, Móises Habacuque Gomes
-                    Pereira,
-                    Poliana Santiago Souza</p>
+                <div class="div1">
+                    <h2>Dev. Full-Stack</h2>
+                    <li>Bianca Araujo Coelho <a href="https://github.com/BrytanniADJ">Github</a> <a href="https://linkedin.com/in/bianca-ara%C3%BAjo-b03b3b205">LinkedIn</a></li>
+                    <li>Lucas Bernardo Ribeiro Siqueira <a href="https://github.com/RickSanchez1029">Github</a> <a href="https://linkedin.com/in/lucas-ribeiro-23a39a302">LinkedIn</a></li>
+                    <li>Maria Eduarda Fernandes Costa</li>
+                </div>
+                <div class="div3">
+                    <h2>Dev. Backend</h2>
+                    <li>Maria Clara Damasceno Serro <a href="https://github.com/krara07">Github</a></li>
+                    <li>Moisés Habacuque Gomes Pereira <a href="https://www.linkedin.com/in/moises-habacuque-0466502b1">LinkedIn</a></li>
+                </div>
+                <div class="div4">
+                    <h2>Dev. Frontend</h2>
+                    <li>Caique Romulo Araujo de Jesus <a href="https://github.com/caiquearaujo7">Github</a></li>
+                    <li>Diego Santos Luiz</li>
+                    <li>Diego Mendes Cunha <a href="https://github.com/mendesdiego2024">Github</a> <a href="https://www.linkedin.com/in/diego-mendes-11425a228">LinkedIn</a></li>
+                    <li>Poliana Santiago Souza</li>
+                </div>
+                <div class="div2">
+                    <img src="./assets/images/senac_logo.png" alt="Logo Senac" title="Logo Senac">
+                    <h2>Senac em Minas</h2>
+                    <div class="senac">
+                        <img class="icon" data-type="local" src="./assets/images/local-es.png" alt="Ícone de Localização">
+                        <p>Rua José Duarte de Paiva, 775 - Santa Luzia, Sete Lagoas - MG</p>
+                    </div>
+                    <div class="senac">
+                        <a href="https://www.facebook.com/senacminas/"><img class="icon" data-type="facebook" src="./assets/images/facebook-es.png" alt="Facebook"></a>
+                        <a href="https://www.twitter.com/senacminas/"><img class="icon" data-type="twitter" src="./assets/images/twitter-es.png" alt="Twitter"></a>
+                        <a href="https://www.youtube.com/user/SenacMinasOficial"><img class="icon" data-type="youtube" src="./assets/images/youtube-es.png" alt="Youtube"></a>
+                        <a href="http://www.linkedin.com/company/senac-minas"><img class="icon" data-type="linkedin" src="./assets/images/linkedin-es.png" alt="LinkedIn"></a>
+                        <a href="https://www.instagram.com/senacminas/"><img class="icon" data-type="instagram" src="./assets/images/instagram-es.png" alt="Instagram"></a>
+                    </div>
+                </div> <!--Senac-->
             </footer>
-
-            <!-- Link para o arquivo JavaScript externo -->
-            <script src="scripts.js"></script>
         </section>
-
     </main>
 </body>
-
 </html>

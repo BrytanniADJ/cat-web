@@ -360,5 +360,22 @@ function btts_edicao(button, screen){ // um parâmetro para os botões e outro p
     }
 }
 
+// funções tela consulta (grupo)
+function telas_none_2(){
+    for (let i = 1; i <= 6; i++) {
+        let element = document.getElementById(`screen_${i}`);
+        if (element) {
+            element.style.display = "none";
+        } else {
+            console.log(`Elemento screen_${i} não encontrado`);
+        }
+    }
+}
+
+function telas_consul(number){
+    telas_none_2()
+    document.getElementById(`screen_${number}`).style.display = "block";
+}
+
 //print da tela do documento
 // window.print()

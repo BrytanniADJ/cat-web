@@ -59,9 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($sql) === TRUE) {
             echo "Usuário cadastrado"; echo "echo <script>
-             alert('Funcionário excluído com sucesso');
-             window.location.href = '$url';
-             </script>";
+            alert('Funcionário excluído com sucesso');
+            window.location.href = '$url';
+            </script>";
         } else {
             echo "Erro: " . $sql . "<br>" . $conn->error;
         }
@@ -100,26 +100,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         $sql = "UPDATE funcionario SET cod_empresa = '$cod_empre', nome_func ='$nome', nome_mae_func = '$nome_mae', data_nascimento_func ='$data_nascimento',
-         identidade_func ='$identidade', cpf_func ='$cpf', ra_func ='$ra', estado_civil ='$estado_civil', sexo ='$sexo', cep_func ='$cep', bairro_func ='$bairro',municipio_func ='$municipio',
-         estado_func ='$estado', endereco_func ='$endereco', telefone_func ='$telefone', email_func ='$email', area_func ='$area', grau_instrucao_func =' $grau', ctps_func ='$ctps', cbo_func ='$cbo',
-         remuneracao_func ='$remuneracao', pis_pasep_nit_func ='$pis_pasep_nit ', aposentadoria_func=' $aposentadoria'
-         WHERE cod_funcionario = '$cod'";
-         
-         $url = "http://localhost/cat-web/index.html";
+        identidade_func ='$identidade', cpf_func ='$cpf', ra_func ='$ra', estado_civil ='$estado_civil', sexo ='$sexo', cep_func ='$cep', bairro_func ='$bairro',municipio_func ='$municipio',
+        estado_func ='$estado', endereco_func ='$endereco', telefone_func ='$telefone', email_func ='$email', area_func ='$area', grau_instrucao_func =' $grau', ctps_func ='$ctps', cbo_func ='$cbo',
+        remuneracao_func ='$remuneracao', pis_pasep_nit_func ='$pis_pasep_nit ', aposentadoria_func=' $aposentadoria'
+        WHERE cod_funcionario = '$cod'";
+        
+        $url = "http://localhost/cat-web/index.html";
 
 
 
         if ($conn->query($sql) === TRUE) {
-             echo "Usuário cadastrado"; echo "echo <script>
-             alert('Funcionário atualizado com sucesso');
-             window.location.href = '$url';
-             </script>";
-         } else {
+            echo "Usuário cadastrado"; echo "echo <script>
+            alert('Funcionário atualizado com sucesso');
+            window.location.href = '$url';
+            </script>";
+        } else {
             echo "Erro: " . $sql . "<br>" . $conn->error;
         }
 
         
-         
+        
 
     }
 
