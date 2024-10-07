@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de CAT</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+    <h1>Consulta de Comunicação de Acidente de Trabalho (CAT)</h1>
+    
+    <!-- Formulário para consulta de CAT -->
+    <form>
+        <div class="form-group">
+            <label for="numero_cat">Nome do funcionario/CPF ou Número da CAT:</label>
+            <input type="text" id="numero_cat" name="numero_cat">
+        </div>
+        
+        
+        <div class="form-buttons">
+            <button type="submit">Pesquisar</button> <!-- Botão para iniciar a pesquisa -->
+            <button type="reset">Limpar</button> <!-- Botão para limpar os campos -->
+        </div>
+    </form>
+
+    <!-- Área para exibição dos resultados da consulta -->
+    <div class="resultados">
+        <h2>Resultados da Consulta</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Número da CAT</th>
+                    <th>Data do Acidente</th>
+                    <th>Nome do Empregado</th>
+                    <th>CPF do Empregado</th>
+                    <th>CNPJ do Empregador</th>
+                    <th>Razão Social do Empregador</th>
+                    <th>Detalhes do Acidente</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exemplo de dados de resultado, podem ser substituídos por dados reais -->
+                <tr>
+                    <td>123456</td>
+                    <td>01/01/2024</td>
+                    <td>João Silva</td>
+                    <td>123.456.789-00</td>
+                    <td>00.123.456/0001-00</td>
+                    <td>Empresa XYZ</td>
+                    <td>Fratura no braço</td>
+                    <td>Em andamento</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="result-buttons">
+            <button onclick="window.print()">Imprimir</button> <!-- Botão para imprimir os resultados -->
+            <button onclick="exportar()">Exportar</button> <!-- Botão para exportar os resultados -->
+        </div>
+    </div>
+
+    <!-- Script de exemplo para função de exportação, deve ser implementado -->
+    <script>
+        function exportar() {
+            alert('Exportar função ainda não implementada');
+        }
+    </script>
+</body>
+</html>
