@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <!-- Link do caminho para a página de reset do estilo do site -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Link do caminho para a página do estilo do site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/formulario-icon.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>ProSafe - CAT</title>
+    <!-- Título -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  </head>
+  <body class="consulta">
+    <main class="consulta">
+      <section id="section_login2" class="consulta" style="display: block">
+        <section class="head conteiner">
+          <div class="display-center tab botoes">
+            <button
+              style="border-bottom: 1px solid var(--cores)"
+              class="tbl-1 tabelas tablinks"
+              onclick="telas_consul(1)"
+            >
+              FUNCIONÁRIO
+            </button>
+            <button class="tabelas tablinks" onclick="telas_consul(2)">
+              EMPRESA
+            </button>
+            <button class="tabelas tablinks" onclick="telas_consul(3)">
+              MÉDICO
+            </button>
+            <img
+              alt="Logo"
+              src="./assets/images/logo-es.png"
+              class="img-logo"
+              onclick="modos()"
+              id="logo_bd"
+            />
+            <button class="tabelas tablinks" onclick="telas_consul(4)">
+              CID
+            </button>
+            <button class="tabelas tablinks" onclick="telas_consul(5)">
+              TIPO DE LESÃO
+            </button>
+            <button class="tbl-6 tabelas tablinks" onclick="telas_consul(6)">
+              AGENTE CAUSADOR
+            </button>
+          </div>
+        </section>
+
+        <section class="pesquisa" id="screen_1" style="display: block">
+          <div id="funcionario" class="tabcontent">
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $("input[name = 'cod_funcionario']").blur(function(){
+                  var $nome_func = $("input[name = 'nome_func']");
+                  var $data_nascimento_func = $("input[name = 'data_nascimento_func']");
+                  var $cpf_func = $("input[name = 'cpf_func']");
+                  var $estado_civil = $("select[name = 'estado_civil']");
+                  var $cep_func = $("input[name = 'cep_func']");
+                  var $municipio_func = $("input[name = 'municipio_func']");
+                  var $endereco_func = $("input[name = 'endereco_func']");
+                  var $email_func = $("input[name = 'email_func']");
+                  var $grau_instrucao_func = $("select[name = 'grau_instrucao_func']");
+                  var $cbo_func = $("input[name = 'cbo_func']");
+                  var $pis_pasep_nit_func = $("input[name = 'pis_pasep_nit_func']");
+                  var $cod_empresa = $("input[name = 'cod_empresa']");
+                  var $nome_mae_func = $("input[name = 'nome_mae_func']");
+                  var $identidade_func = $("input[name = 'identidade_func']");
+                  var $ra_func = $("input[name = 'ra_func']");
+                  var $sexo= $("select[name = 'sexo']");
+                  var $bairro_func = $("input[name = 'bairro_func']");
+                  var $estado_func = $("select[name = 'estado_func']");
+                  var $telefone_func = $("input[name = 'telefone_func']");
+                  var $area_func = $("input[name = 'area_func']");
+                  var $ctps_func = $("input[name = 'ctps_func']");
+                  var $remuneracao_func = $("input[name = 'remuneracao_func']");
+                  var $aposentadoria_func = $("select[name = 'aposentadoria_func']");
+                 
+                  $.getJSON('funcionario_cons.php',{
+                    cod_funcionario: $(this).val()
+                  }, function(json){
+                    $nome_func.val(json.nome_func);
+                    $data_nascimento_func.val(json.data_nascimento_func);
+                    $cpf_func.val(json.cpf_func);
+                    $estado_civil.val(json.estado_civil);
+                    $cep_func.val(json.cep_func);
+                    $municipio_func.val(json.municipio_func);
+                    $endereco_func.val(json.endereco_func);
+                    $email_func.val(json.email_func);
+                    $grau_instrucao_func.val(json.grau_instrucao_func);
+                    $cbo_func.val(json.cbo_func);
+                    $pis_pasep_nit_func.val(json.pis_pasep_nit_func);
+                    $cod_empresa.val(json.cod_empresa);
+                    $nome_mae_func.val(json.nome_mae_func);
+                    $identidade_func.val(json.identidade_func);
+                    $ra_func.val(json.ra_func);
+                    $sexo.val(json.sexo);
+                    $bairro_func.val(json.bairro_func);
+                    $estado_func.val(json.estado_func);
+                    $telefone_func.val(json.telefone_func);
+                    $area_func.val(json.area_func);
+                    $ctps_func.val(json.ctps_func);
+                    $remuneracao_func.val(json.remuneracao_func);
+                    $aposentadoria_func.val(json.aposentadoria_func);
+                  });
+                });
+              });
+            </script>
+            <form class="form" action="funcionario.php" method="POST">
+              <div class="form-group form-divisao">
+                <div class="g1">
+                  <div class="form-group">
+                    <label for="cod">COD:</label>
+                    <input
+                      type="text"
+                      id="cod_funcionario"
+                      name="cod_funcionario"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_funcionario">NOME:</label>
+                    <input type="text" id="nome_func" name="nome_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">DATA DE NASCIMENTO:</label>
+                    <input
+                      type="text"
+                      id="data_nascimento_func"
+                      name="data_nascimento_func"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf_func" name="cpf_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">ESTADO CIVIL:</label>
+                    <select name="estado_civil">
+                      <option value="SOLTEIRO(A)">SOLTEIRO(A)</option>
+                      <option value="CASADO(A)">CASADO(A)</option>
+                      <option value="DIVORCIÁDO(A)">DIVORCIÁDO(A)</option>
+                      <option value="VIÚVO(A)">VIÚVO(A)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">CEP:</label>
+                    <input type="text" id="cep_func" name="cep_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">MUNICÍPIO:</label>
+                    <input
+                      type="text"
+                      id="municipio_func"
+                      name="municipio_func"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">ENDEREÇO:</label>
+                    <input
+                      type="text"
+                      id="endereco_func"
+                      name="endereco_func"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">EMAIL:</label>
+                    <input type="text" id="email_func" name="email_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">GRAU DE INSTRUÇÃO:</label>
+                    <select name="grau_instrucao_func">
+                      <option value="EDUCAÇÃO BÁSICA">EDUCAÇÃO BÁSICA</option>
+                      <option value="ENSINO MÉDIO">ENSINO MÉDIO</option>
+                      <option value="GRADUAÇÃO">GRADUAÇÃO</option>
+                      <option value="PÓS-GRADUAÇÃO">PÓS-GRADUAÇÃO</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">CBO:</label>
+                    <input type="text" id="cbo_func" name="cbo_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">PIS/PASEP/NIT:</label>
+                    <input
+                      type="text"
+                      id="pis_pasep_nit_func"
+                      name="pis_pasep_nit_func"
+                    />
+                  </div>
+                </div>
+
+                <div class="g2">
+                  <div class="form-group">
+                    <label for="data_de_nascimento">COD EMPRESA:</label>
+                    <input type="text" id="cod_empresa" name="cod_empresa" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">NOME DA MÃE:</label>
+                    <input
+                      type="text"
+                      id="nome_mae_func"
+                      name="nome_mae_func"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">IDENTIDADE:</label>
+                    <input
+                      type="text"
+                      id="identidade_func"
+                      name="identidade_func"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">RA:</label>
+                    <input type="text" id="ra_func" name="ra_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">SEXO:</label>
+                    <select name="sexo">
+                      <option value="MASCULINO">MASCULINO</option>
+                      <option value="FEMININO">FEMININO</option>
+                      <option value="OUTRO">OUTRO</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">BAIRRO:</label>
+                    <input type="text" id="bairro_func" name="bairro_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="estado_func">ESTADO:</label>
+                    <select name="estado_func">
+                      <option value="AC">AC</option>
+                      <option value="AL">AL</option>
+                      <option value="AP">AP</option>
+                      <option value="AM">AM</option>
+                      <option value="BA">BA</option>
+                      <option value="CE">CE</option>
+                      <option value="DF">DF</option>
+                      <option value="ES">ES</option>
+                      <option value="GO">GO</option>
+                      <option value="MA">MA</option>
+                      <option value="MT">MT</option>
+                      <option value="MS">MS</option>
+                      <option value="MG">MG</option>
+                      <option value="PA">PA</option>
+                      <option value="PB">PB</option>
+                      <option value="PR">PR</option>
+                      <option value="PE">PE</option>
+                      <option value="PI">PI</option>
+                      <option value="RJ">RJ</option>
+                      <option value="RN">RN</option>
+                      <option value="RS">RS</option>
+                      <option value="RO">RO</option>
+                      <option value="RR">RR</option>
+                      <option value="SC">SC</option>
+                      <option value="SP">SP</option>
+                      <option value="SE">SE</option>
+                      <option value="TO">TO</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">TELEFONE:</label>
+                    <input
+                      type="text"
+                      id="telefone_func"
+                      name="telefone_func"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">ÁREA:</label>
+                    <input type="text" id="area_func" name="area_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">CTPS:</label>
+                    <input type="text" id="ctps_func" name="ctps_func" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">REMUNERAÇÃO:</label>
+                    <input
+                      type="text"
+                      id="remuneracao_func"
+                      name="remuneracao_func"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="data_de_nascimento">APOSENTADORIA:</label>
+                    <select name="aposentadoria_func">
+                      <option value="SIM">SIM</option>
+                      <option value="NÃO">NÃO</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <section class="conteiner">
+                <div class="botoes display-center">
+                  <button
+                    type="submit"
+                    class="button-click btts_cadastro"
+                    name="cadastrar_funcionario"
+                  >
+                    Cadastrar
+                  </button>
+                  <button
+                    type="submit"
+                    class="button-click btts_cadastro"
+                    name="atualizar_funcionario"
+                  >
+                    Atualizar
+                  </button>
+                  <button
+                    type="submit"
+                    class="button-click btts_cadastro"
+                    name="excluir_funcionario"
+                  >
+                    Excluir
+                  </button>
+                  <button type="submit" class="button-click btts_cadastro">
+                    Consultar
+                  </button>
+                  <button type="submit" class="button-click btts_cadastro">
+                    Limpar
+                  </button>
+                  <button type="submit" class="button-click btts_cadastro">
+                    Voltar
+                  </button>
+                </div>
+              </section>
+            </form>
+          </div>
+        </section>
+
+        <section class="pesquisa" id="screen_2" style="display: none">
+          <div id="empresa" class="tabcontent">
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $("input[name = 'cod_empresa']").blur(function(){
+                  var $nome_empresa = $("input[name = 'nome_empresa']");
+                  var $tipo_num_doc_empresa = $("input[name = 'tipo_num_doc_empresa']");
+                  var $cnpj_empresa = $("input[name = 'cnpj_empresa']");
+                  var $cnae_empresa = $("input[name = 'cnae_empresa']");
+                  var $cep_empresa = $("input[name = 'cep_empresa']");
+                  var $endereco_empresa = $("input[name = 'endereco_empresa']");
+                  var $bairro_empresa = $("input[name = 'bairro_empresa']");
+                  var $municipio_empresa = $("input[name = 'municipio_empresa']");
+                  var $estado_empresa = $("select[name = 'estado_empresa']");
+                  var $telefone_empresa = $("input[name = 'telefone_empresa']");
+                  var $email_empresa = $("input[name = 'email_empresa']");
+                  $.getJSON('empresa_cons.php',{
+                    cod_empresa: $(this).val()
+                  }, function(json){
+                    $nome_empresa.val(json.nome_empresa);
+                    $tipo_num_doc_empresa.val(json.tipo_num_doc_empresa);
+                    $cnpj_empresa.val(json.cnpj_empresa);
+                    $cnae_empresa.val(json.cnae_empresa);
+                    $cep_empresa.val(json.cep_empresa);
+                    $endereco_empresa.val(json.endereco_empresa);
+                    $bairro_empresa.val(json.bairro_empresa);
+                    $municipio_empresa.val(json.municipio_empresa);
+                    $estado_empresa.val(json.estado_empresa);
+                    $telefone_empresa.val(json.telefone_empresa);
+                    $email_empresa.val(json.email_empresa);
+                  });
+                });
+              });
+            </script>
+            <form class="form" action="empresa.php" method="POST">
+              <div class="form-group form-divisao">
+                <div class="g1">
+                  <div class="form-group">
+                    <label for="nome_empresa">COD EMPRESA:</label>
+                    <input type="text" id="cod_empresa" name="cod_empresa" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_empresa">NOME:</label>
+                    <input type="text" id="nome_empresa" name="nome_empresa" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_empresa">TIPO/NUM DOC:</label>
+                    <input
+                      type="text"
+                      id="tipo_num_doc_empresa"
+                      name="tipo_num_doc_empresa"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_empresa">CNPJ:</label>
+                    <input type="text" id="cnpj_empresa" name="cnpj_empresa" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_empresa">CNAE:</label>
+                    <input type="text" id="cnae_empresa" name="cnae_empresa" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_empresa">CEP:</label>
+                    <input type="text" id="cep_empresa" name="cep_empresa" />
+                  </div>
+                </div>
+
+                <div class="g2">
+                  <div class="form-group">
+                    <label for="nome_empresa">ENDEREÇO:</label>
+                    <input
+                      type="text"
+                      id="endereco_empresa"
+                      name="endereco_empresa"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_empresa">BAIRRO:</label>
+                    <input
+                      type="text"
+                      id="bairro_empresa"
+                      name="bairro_empresa"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_empresa">MUNICÍPIO:</label>
+                    <input
+                      type="text"
+                      id="municipio_empresa"
+                      name="municipio_empresa"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="estado_empresa">ESTADO:</label>
+                    <select name="estado_empresa">
+                      <option value="AC">AC</option>
+                      <option value="AL">AL</option>
+                      <option value="AP">AP</option>
+                      <option value="AM">AM</option>
+                      <option value="BA">BA</option>
+                      <option value="CE">CE</option>
+                      <option value="DF">DF</option>
+                      <option value="ES">ES</option>
+                      <option value="GO">GO</option>
+                      <option value="MA">MA</option>
+                      <option value="MT">MT</option>
+                      <option value="MS">MS</option>
+                      <option value="MG">MG</option>
+                      <option value="PA">PA</option>
+                      <option value="PB">PB</option>
+                      <option value="PR">PR</option>
+                      <option value="PE">PE</option>
+                      <option value="PI">PI</option>
+                      <option value="RJ">RJ</option>
+                      <option value="RN">RN</option>
+                      <option value="RS">RS</option>
+                      <option value="RO">RO</option>
+                      <option value="RR">RR</option>
+                      <option value="SC">SC</option>
+                      <option value="SP">SP</option>
+                      <option value="SE">SE</option>
+                      <option value="TO">TO</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="nome_empresa">TELEFONE:</label>
+                    <input
+                      type="text"
+                      id="telefone_empresa"
+                      name="telefone_empresa"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="nome_empresa">EMAIL:</label>
+                    <input
+                      type="text"
+                      id="email_empresa"
+                      name="email_empresa"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Adicione mais campos conforme necessário -->
+              <section class="conteiner">
+                <div class="botoes display-center">
+                  <button
+                    type="submit"
+                    class="button-click btts_cadastro"
+                    name="cadastrar_empresa"
+                  >
+                    Cadastrar
+                  </button>
+                  <button
+                    type="submit"
+                    class="button-click btts_cadastro"
+                    name="atualizar_empresa"
+                  >
+                    Atualizar
+                  </button>
+                  <button
+                    type="submit"
+                    class="button-click btts_cadastro"
+                    name="excluir_empresa"
+                  >
+                    Excluir
+                  </button>
+                  <button type="submit" class="button-click btts_cadastro">
+                    Consultar
+                  </button>
+                  <button type="submit" class="button-click btts_cadastro">
+                    Limpar
+                  </button>
+                  <button type="submit" class="button-click btts_cadastro">
+                    Voltar
+                  </button>
+                </div>
+              </section>
+            </form>
+          </div>
+        </section>
+
+        <section class="pesquisa" id="screen_3" style="display: none">
+          <div id="medico" class="tabcontent">
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $("input[name = 'cod_medico']").blur(function(){
+                  var $nome_medico = $("input[name = 'nome_medico']");
+                  var $cpf_medico = $("input[name = 'cpf_medico']");
+                  var $email_medico = $("input[name = 'email_medico']");
+                  var $especialidade_medico = $("input[name = 'especialidade_medico']");
+                  var $crm_medico = $("input[name = 'crm_medico']");
+                  $.getJSON('medico_cons.php',{
+                    cod_medico: $ (this).val()
+                  }, function(json){
+                    $nome_medico.val(json.nome_medico);
+                    $cpf_medico.val(json.cpf_medico);
+                    $email_medico.val(json.email_medico);
+                    $especialidade_medico.val(json.especialidade_medico);
+                    $crm_medico.val(json.crm_medico);
+                  });
+                });
+              });
+            </script>
+            <form class="form" action="medico.php" method="POST">
+              <div class="form-group form-divisao">
+                <div class="g1">
+                  <div class="form-group">
+                    <label for="cod_medico">COD MÉDICO:</label>
+                    <input type="text" id="cod_medico" name="cod_medico" />
+                  </div>
+                  <div class="form-group">
+                    <label for="nome_medico">NOME:</label>
+                    <input type="text" id="nome_medico" name="nome_medico" />
+                  </div>
+                  <div class="form-group">
+                    <label for="cpf_medico">CPF:</label>
+                    <input type="text" id="cpf_medico" name="cpf_medico" />
+                  </div>
+                </div>
+
+                <div class="g2">
+                  <div class="form-group">
+                    <label for="email_medico">EMAIL:</label>
+                    <input type="email" id="email_medico" name="email_medico" />
+                  </div>
+                  <div class="form-group">
+                    <label for="especialidade_medico">ESPECIALIDADE:</label>
+                    <input
+                      type="text"
+                      id="especialidade_medico"
+                      name="especialidade_medico"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="crm_medico">CRM:</label>
+                    <input type="text" id="crm_medico" name="crm_medico" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="buttons">
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="cadastrar_medico"
+                >
+                  Cadastrar
+                </button>
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="atualizar_medico"
+                >
+                  Atualizar
+                </button>
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="excluir_medico"
+                >
+                  Excluir
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Consultar
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Limpar
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Voltar
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="pesquisa" id="screen_4" style="display: none">
+          <div id="cid" class="tabcontent">
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $("input[name = 'codigo_cid']").blur(function(){
+                  var $descricao_cid = $("input[name = 'descricao_cid']");
+                  $.getJSON('cid_cons.php',{
+                    codigo_cid: $ (this).val()
+                  }, function(json){
+                    $descricao_cid.val(json.descricao_cid);
+                  });
+                });
+              });
+            </script>
+            <form class="form" action="cid.php" method="POST">
+              <div class="form-group">
+                <label for="codigo_cid">CÓDIGO CID:</label>
+                <input type="text" id="codigo_cid" name="codigo_cid" />
+              </div>
+              <div class="form-group">
+                <label for="descricao_cid">DESCRIÇÃO:</label>
+                <input type="text" id="C" name="descricao_cid" />
+              </div>
+
+              <div class="buttons">
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="cadastrar_cid">Cadastrar</button>
+
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="atualizar_cid">Atualizar</button>
+
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="excluir_cid">Excluir</button>
+
+                <button type="submit"
+                class="button-click btts_cadastro"
+                name="consultar_cid">Consultar</button>
+
+
+                <button type="submit"
+                class="button-click btts_cadastro">Limpar</button>
+
+
+                <button type="submit" class="button-click btts_cadastro">Voltar</button>
+                
+              </div>
+            </form>
+            
+          </div>
+        </section>
+
+        <section class="pesquisa" id="screen_5" style="display: none">
+          <div id="tipo_lesao" class="tabcontent">
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $("input[name = 'cod_lesao']").blur(function(){
+                  var $descricao_lesao = $("input[name = 'descricao_lesao']");
+                  $.getJSON('lesao_cons.php',{
+                    cod_lesao: $ (this).val()
+                  }, function(json){
+                    $descricao_lesao.val(json.descricao_lesao);
+                  });
+                });
+              });
+            </script>
+            <form class="form" action="lesao.php" method="POST">
+              <div class="form-group">
+                <label for="tipo_lesao_nome">COD LESÃO:</label>
+                <input type="text" id="cod_lesao" name="cod_lesao" />
+              </div>
+
+              <div class="form-group">
+                <label for="tipo_lesao_nome">DESCRIÇÃO:</label>
+                <input
+                  type="text"
+                  id="descricao_lesao"
+                  name="descricao_lesao"
+                />
+              </div>
+
+              <div class="buttons">
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="cadastrar_lesao"
+                >
+                  Cadastrar
+                </button>
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="atualizar_lesao"
+                >
+                  Atualizar
+                </button>
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="excluir_lesao"
+                >
+                  Excluir
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Consultar
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Limpar
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Voltar
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="pesquisa" id="screen_6" style="display: none">
+          <div id="agente_causador" class="tabcontent">
+            <script type="text/javascript">
+              $(document).ready(function(){
+                $("input[name = 'cod_agente']").blur(function(){
+                  var $nome_agente = $("input[name = 'nome_agente']");
+                  var $descricao_agente = $("input[name = 'descricao_agente']");
+                  $.getJSON('agente_cons.php',{
+                    cod_agente: $ (this).val()
+                  }, function(json){
+                    $nome_agente.val(json.nome_agente);
+                    $descricao_agente.val(json.descricao_agente);
+                  });
+                });
+              });
+            </script>
+            <form class="form" action="agente.php" method="POST">
+              <div class="form-group">
+                <label for="agente_causador_nome">COD AGENTE:</label>
+                <input type="text" id="cod_agente" name="cod_agente" />
+              </div>
+
+              <div class="form-group">
+                <label for="agente_causador_nome">NOME DO AGENTE:</label>
+                <input type="text" id="nome_agente" name="nome_agente" />
+              </div>
+
+              <div class="form-group">
+                <label for="agente_causador_nome">DESCRIÇÃO</label>
+                <input
+                  type="text"
+                  id="descricao_agente"
+                  name="descricao_agente"
+                />
+              </div>
+
+              <div class="buttons">
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="cadastrar_agente"
+                >
+                  Cadastrar
+                </button>
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="atualizar_agente"
+                >
+                  Atualizar
+                </button>
+                <button
+                  type="submit"
+                  class="button-click btts_cadastro"
+                  name="excluir_agente"
+                >
+                  Excluir
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Consultar
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Limpar
+                </button>
+                <button type="submit" class="button-click btts_cadastro">
+                  Voltar
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </section>
+      <footer>
+        <div class="div1">
+          <h2>Dev. Full-Stack</h2>
+          <li>
+            Bianca Araujo Coelho
+            <a href="https://github.com/BrytanniADJ">Github</a>
+            <a href="https://linkedin.com/in/bianca-ara%C3%BAjo-b03b3b205"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            Lucas Bernardo Ribeiro Siqueira
+            <a href="https://github.com/RickSanchez1029">Github</a>
+            <a href="https://linkedin.com/in/lucas-ribeiro-23a39a302"
+              >LinkedIn</a
+            >
+          </li>
+          <li>Maria Eduarda Fernandes Costa</li>
+        </div>
+        <div class="div3">
+          <h2>Dev. Backend</h2>
+          <li>
+            Maria Clara Damasceno Serro
+            <a href="https://github.com/krara07">Github</a>
+          </li>
+          <li>
+            Moisés Habacuque Gomes Pereira
+            <a href="https://www.linkedin.com/in/moises-habacuque-0466502b1"
+              >LinkedIn</a
+            >
+          </li>
+        </div>
+        <div class="div4">
+          <h2>Dev. Frontend</h2>
+          <li>
+            Caique Romulo Araujo de Jesus
+            <a href="https://github.com/caiquearaujo7">Github</a>
+          </li>
+          <li>Diego Santos Luiz</li>
+          <li>
+            Diego Mendes Cunha
+            <a href="https://github.com/mendesdiego2024">Github</a>
+            <a href="https://www.linkedin.com/in/diego-mendes-11425a228"
+              >LinkedIn</a
+            >
+          </li>
+          <li>Poliana Santiago Souza</li>
+        </div>
+        <div class="div2">
+          <img
+            src="./assets/images/senac_logo.png"
+            alt="Logo Senac"
+            title="Logo Senac"
+          />
+          <h2>Senac em Minas</h2>
+          <div class="senac">
+            <img
+              class="icon"
+              data-type="local"
+              src="./assets/images/local-es.png"
+              alt="Ícone de Localização"
+            />
+            <p>Rua José Duarte de Paiva, 775 - Santa Luzia, Sete Lagoas - MG</p>
+          </div>
+          <div class="senac">
+            <a href="https://www.facebook.com/senacminas/"
+              ><img
+                class="icon"
+                data-type="facebook"
+                src="./assets/images/facebook-es.png"
+                alt="Facebook"
+            /></a>
+            <a href="https://www.twitter.com/senacminas/"
+              ><img
+                class="icon"
+                data-type="twitter"
+                src="./assets/images/twitter-es.png"
+                alt="Twitter"
+            /></a>
+            <a href="https://www.youtube.com/user/SenacMinasOficial"
+              ><img
+                class="icon"
+                data-type="youtube"
+                src="./assets/images/youtube-es.png"
+                alt="Youtube"
+            /></a>
+            <a href="http://www.linkedin.com/company/senac-minas"
+              ><img
+                class="icon"
+                data-type="linkedin"
+                src="./assets/images/linkedin-es.png"
+                alt="LinkedIn"
+            /></a>
+            <a href="https://www.instagram.com/senacminas/"
+              ><img
+                class="icon"
+                data-type="instagram"
+                src="./assets/images/instagram-es.png"
+                alt="Instagram"
+            /></a>
+          </div>
+        </div>
+        <!--Senac-->
+      </footer>
+      <script src="./assets/js/script.js"></script>
+    </main>
+  </body>
+</html>
