@@ -770,4 +770,10 @@ main.cat-final div.assinant{
     }
 }
 
-/* RESPONSIVIDADE */
+/* PESQUISA */
+body.pesquisa{
+    main{
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+}
