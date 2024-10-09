@@ -159,36 +159,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-// cat-inicio
-document.getElementById("tipoCat").addEventListener('change', function(){
-    const tipoCat = this.value;
-
-    const inicial = document.querySelectorAll(".inicial-cat");
-    const reaber = document.querySelectorAll(".reabertura-cat");
-    const obito = document.querySelectorAll(".obito-cat");
-    const cat_part2 = document.getElementById("cat-part2");
-
-    // reinicia deixando tudo invisivel quando mudado
-    inicial.forEach(function(inicial){inicial.style.display = "none";});
-
-    reaber.forEach(function(reaber){reaber.style.display = "none";});
-
-    obito.forEach(function(obito){obito.style.display = "none";});
-
-    cat_part2.style.visibility = "visible";
-    
-    if(tipoCat == 1){
-        inicial.forEach(function(inicial){inicial.style.display = "block";});
-    }else if(tipoCat == 2){
-        reaber.forEach(function(reaber){reaber.style.display = "block";});
-    }else if(tipoCat == 3){
-        obito.forEach(function(obito){obito.style.display = "block";});
-    }else{
-        cat_part2.style.visibility = "hidden";
-        alert("Uma opção precisa ser selecionada");
-    }
-});
-
 //cat inicio
 document.getElementById("tipo_empre-cat").addEventListener('change', function(){
     const tipo_empre = this.value;
